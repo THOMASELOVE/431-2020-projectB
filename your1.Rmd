@@ -6,8 +6,6 @@ title: "Selecting a Data Source"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-## Your Options: NHANES or Something Else
-
 You have two options in terms of a data set you will use in Study 2.
 
 ### Data from NHANES (National Health and Nutrition Examination Survey). 

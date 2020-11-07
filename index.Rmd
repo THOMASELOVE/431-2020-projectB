@@ -8,9 +8,9 @@ knitr::opts_chunk$set(comment = NA)
 
 # What is on this Website
 
-- Complete instructions for Study 1 (look in the Study 1: Class Survey section in the top menu)
-- Complete instructions for Study 2 (look in the Study 2: Your Data section in the top menu)
-- A Checklist of the tasks that need to be accomplished for Project B.
+- **Study 1** Instructions (be sure to look at all Study 1 tabs in the top menu)
+- **Study 2** Instructions (be sure to look at all Study 2 tabs in the top menu)
+- A [Checklist](tasks.html) of the tasks that need to be accomplished for Project B.
 - The top menu also provides links to contact us, and to the 431 home page.
 
 ## Project B Deliverables
@@ -23,9 +23,9 @@ You will complete two Google Forms in November...
 The bulk of the work, though, is due on 2020-12-10 at noon.
 
 - You will complete two studies, building a report using R Markdown for each, and those reports will be due on 2020-12-10 at noon.
-- You will also communicate your findings to Dr. Love in some other way in December, and the details on that are not yet settled but will be as soon as possible.
-    1. Some project groups will do a pre-recorded video presentation, not to exceed 10 minutes.
-    2. The remaining project groups will be asked instead to have a live 15-minute Zoom meeting with Dr. Love to discuss their work.
+- Dr. Love will pose a series of questions about these Studies right after Thanksgiving, and you will respond to them in December through a short oral presentation.
+    1. Some project groups will do a pre-recorded video presentation.
+    2. The remaining project groups will have a live Zoom meeting with Dr. Love.
 - Finally, you'll complete a short Google Form at the end of the project as a self-evaluation. It'll take about 10 minutes, much like the one you did for Project A. It will be due with the other project materials at noon on 2020-12-10.
 
 #### Partnerships?

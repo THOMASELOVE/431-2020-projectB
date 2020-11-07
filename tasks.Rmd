@@ -30,14 +30,14 @@ Your Study 2 Report is to be submitted to Canvas by 2020-12-10 at Noon.
 
 # Oral Presentation of Results
 
-1. Some project groups will do a pre-recorded video presentation, not to exceed 10 minutes, which will be due along with the other project materials at noon on 2020-12-10.
-2. The remaining project groups will be asked instead to have a live 15-minute Zoom meeting with Dr. Love to discuss their work at a time in December to be determined.
+Dr. Love will pose a series of questions about these Studies right after Thanksgiving, and you will respond to them in December through a short oral presentation.
+    1. Some project groups will do a pre-recorded video presentation.
+    2. The remaining project groups will have a live Zoom meeting with Dr. Love.
 
-Details on the presentations will be settled prior to 2020-11-30.
+Further details on the presentations, including the questions you will need to address, will be communicated to you by 2020-11-30.
 
 # Self-Evaluation for Project B
 
-The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-12-01. It will be due with the other project materials at noon on 2020-12-10.
-
+The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-11-30. It will be due at noon on 2020-12-10.
 
 This page was last updated: `r Sys.time()`.
