@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Required Study 1 Analyses</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Required Study 1 Analyses</h1>
+
+</div>
+
+
+<p>Once the data are made available to you, you will build a <a href="survey5.html">final report for Study 1</a>.</p>
+<p>In your four analyses (chosen from a set of six possibilities), you will be doing:</p>
+<ul>
+<li>Descriptive and exploratory summaries of the data across the groups for each of your chosen outcomes, including, of course, attractive and well-constructed visualizations, graphs and tables.</li>
+<li>Comparisons of the population mean difference for at least one quantitative outcome across a set of two (or three) groups, including appropriate demonstrations of the reasons behind the choices you made between parametric, non-parametric and bootstrap procedures.</li>
+<li>Comparisons of population proportions for categorical outcomes across exposure groups, including appropriately interpreted point estimates and confidence intervals, where available.</li>
+</ul>
+<div id="ingest-merge-clean-the-data-provided" class="section level2">
+<h2>Ingest, Merge, Clean the Data Provided</h2>
+<p>First, you will ingest the data that Dr. Love will provide to you, merging the 2019 and 2020 data so that you wind up with a clean analytic data set including both years worth of data.</p>
+<ul>
+<li>All data merging and cleaning must be included in your R Markdown report, starting from the raw data files Dr. Love provides to you, so that we can replicate your work.
+<ul>
+<li>Remember that some more information on <a href="survey3.html">merging is available here</a>.</li>
+<li>Remember also to check closely for missing data.</li>
+</ul></li>
+<li>You can use the data as they were collected (quantitative, binary or multi-categorical), but you can also create categorical variables from the quantitative variables provided, should that be of interest in one or more of your analyses.
+<ul>
+<li>Should you decide to create such a categorical variable, be sure to describe that process carefully, and demonstrate that each level of your created categorical variable contains at least 10 observations.</li>
+</ul></li>
+</ul>
+</div>
+<div id="analyses-youll-do" class="section level2">
+<h2>Analyses You’ll Do</h2>
+<p>Second, you will complete any four of the following six Survey Analyses, and present these results.</p>
+<p>For each of these analyses, you will provide complete code (including whatever you did to clean the raw data for the variables you are studying), appropriate visualizations and detailed explanations of your analytic decisions, and conclusions. Use a 90% confidence level for all Study 1 work, please.</p>
+<p>Each analysis should be self-contained (so that I don’t have to read Analysis A first to understand Analysis C, for example). Present each new analysis as a subsection with an appropriate heading in the table of contents, following <a href="survey5.html">the specifications</a> for the Study 1 Report.</p>
+<div id="analysis-a.-compare-two-meansmedians-using-paired-samples" class="section level4">
+<h4>Analysis A. Compare two means/medians using paired samples</h4>
+<p>Here, you will need to identify two quantitative variables (outcomes) which can be paired (so that they have a natural link between them, and use the same units of measurement.) You’ll analyze the results and build a confidence interval for the population mean (or median) difference with an appropriate t-based, bootstrap or Wilcoxon signed rank procedure.</p>
+</div>
+<div id="analysis-b.-compare-two-meansmedians-using-independent-samples" class="section level4">
+<h4>Analysis B. Compare two means/medians using independent samples</h4>
+<p>Here, you will need to identify one quantitative (outcome) and one categorical variable (binary - 2 levels.) You’ll analyze the results and build a confidence interval for the difference in means (or medians) with an appropriate t-based, bootstrap or Wilcoxon rank sum procedure. Note that it’s generally easier to find independent samples comparisons than paired samples comparisons in this survey.</p>
+</div>
+<div id="analysis-c.-compare-3-6-meansmedians-using-independent-samples" class="section level4">
+<h4>Analysis C. Compare 3-6 means/medians using independent samples</h4>
+<p>Here, you will need to identify one quantitative (outcome) and one categorical variable (multi-categorical with 3-6 levels, each of which needs to be selected by a minimum of 10 subjects in the survey.) Here, you should be thinking about an analysis of variance with pre-planned Tukey HSD pairwise comparisons, although you are welcome to consider other approaches if the data suggest them.</p>
+</div>
+<div id="analysis-d.-create-and-analyze-a-2-times-2-table" class="section level4">
+<h4>Analysis D. Create and analyze a <span class="math inline">\(2 \times 2\)</span> table</h4>
+<p>Here, you will need to identify two categorical (binary) variables. Each cell of the resulting 2x2 table should contain a minimum of 10 subjects from the survey. You should be focused on the relative risk, odds ratio and risk difference comparisons.</p>
+</div>
+<div id="analysis-e.-create-and-analyze-a-j-times-k-table-where-2-leq-j-leq-5-and-3-leq-k-leq-5" class="section level4">
+<h4>Analysis E. Create and analyze a <span class="math inline">\(J \times K\)</span> table, where <span class="math inline">\(2 \leq J \leq 5\)</span> and <span class="math inline">\(3 \leq K \leq 5\)</span></h4>
+<p>Here, you will need to identify two categorical variables, at least one of which should contain 3-5 levels, while the other contains 2-5. At least 10 subjects must appear in each level of each variable, and in the cross-tabulation of the two variables, you’ll want to pick something that meets the Cochran conditions (so no cells with zero counts, and at least 80% of the cells have counts of 5 or more.) Here, you should be providing the results of an appropriate chi-square test, accompanied by a useful visualization and description of the nature of the observed association.</p>
+</div>
+<div id="analysis-f.-create-and-analyze-a-2-times-2-times-m-table-where-2-leq-m-leq-5." class="section level4">
+<h4>Analysis F. Create and analyze a <span class="math inline">\(2 \times 2 \times M\)</span> table, where <span class="math inline">\(2 \leq M \leq 5\)</span>.</h4>
+<p>Here, you will need to identify two binary categorical variables and an additional stratifying multi-categorical variable with 2-5 levels. You’ll want to ensure that each count in the 2x2xM table is greater than zero, and that as many as possible of them are greater than 5. If this cannot be done with the variables you select initially, change variables. Here, you’ll need to develop the table properly to allow you to conduct a Woolf test and estimate and interpret an odds ratio with Cochran-Mantel-Haenszel, regardless of the results of the Woolf test (but applying appropriate caveats should the assumptions of the CMH test be violated.)</p>
+<p>This page was last updated: 2020-11-06 22:22:22.</p>
+</div>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

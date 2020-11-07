@@ -1,0 +1,59 @@
+---
+title: "Required Study 1 Analyses"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Once the data are made available to you, you will build a [final report for Study 1](survey5.html).
+
+In your four analyses (chosen from a set of six possibilities), you will be doing:
+
+- Descriptive and exploratory summaries of the data across the groups for each of your chosen outcomes, including, of course, attractive and well-constructed visualizations, graphs and tables.
+- Comparisons of the population mean difference for at least one quantitative outcome across a set of two (or three) groups, including appropriate demonstrations of the reasons behind the choices you made between parametric, non-parametric and bootstrap procedures.
+- Comparisons of population proportions for categorical outcomes across exposure groups, including appropriately interpreted point estimates and confidence intervals, where available.
+
+## Ingest, Merge, Clean the Data Provided
+
+First, you will ingest the data that Dr. Love will provide to you, merging the 2019 and 2020 data so that you wind up with a clean analytic data set including both years worth of data. 
+
+- All data merging and cleaning must be included in your R Markdown report, starting from the raw data files Dr. Love provides to you, so that we can replicate your work.
+    - Remember that some more information on [merging is available here](survey3.html).
+    - Remember also to check closely for missing data.
+- You can use the data as they were collected (quantitative, binary or multi-categorical), but you can also create categorical variables from the quantitative variables provided, should that be of interest in one or more of your analyses. 
+    - Should you decide to create such a categorical variable, be sure to describe that process carefully, and demonstrate that each level of your created categorical variable contains at least 10 observations.
+
+## Analyses You'll Do
+
+Second, you will complete any four of the following six Survey Analyses, and present these results.
+
+For each of these analyses, you will provide complete code (including whatever you did to clean the raw data for the variables you are studying), appropriate visualizations and detailed explanations of your analytic decisions, and conclusions. Use a 90% confidence level for all Study 1 work, please.
+
+Each analysis should be self-contained (so that I don't have to read Analysis A first to understand Analysis C, for example). Present each new analysis as a subsection with an appropriate heading in the table of contents, following [the specifications](survey5.html) for the Study 1 Report. 
+
+#### Analysis A. Compare two means/medians using paired samples
+
+Here, you will need to identify two quantitative variables (outcomes) which can be paired (so that they have a natural link between them, and use the same units of measurement.) You'll analyze the results and build a confidence interval for the population mean (or median) difference with an appropriate t-based, bootstrap or Wilcoxon signed rank procedure.
+
+#### Analysis B. Compare two means/medians using independent samples
+
+Here, you will need to identify one quantitative (outcome) and one categorical variable (binary - 2 levels.) You'll analyze the results and build a confidence interval for the difference in means (or medians) with an appropriate t-based, bootstrap or Wilcoxon rank sum procedure. Note that it's generally easier to find independent samples comparisons than paired samples comparisons in this survey.
+
+#### Analysis C. Compare 3-6 means/medians using independent samples
+
+Here, you will need to identify one quantitative (outcome) and one categorical variable (multi-categorical with 3-6 levels, each of which needs to be selected by a minimum of 10 subjects in the survey.) Here, you should be thinking about an analysis of variance with pre-planned Tukey HSD pairwise comparisons, although you are welcome to consider other approaches if the data suggest them.
+
+#### Analysis D. Create and analyze a $2 \times 2$ table
+
+Here, you will need to identify two categorical (binary) variables. Each cell of the resulting 2x2 table should contain a minimum of 10 subjects from the survey. You should be focused on the relative risk, odds ratio and risk difference comparisons.
+
+#### Analysis E. Create and analyze a $J \times K$ table, where $2 \leq J \leq 5$ and $3 \leq K \leq 5$
+
+Here, you will need to identify two categorical variables, at least one of which should contain 3-5 levels, while the other contains 2-5. At least 10 subjects must appear in each level of each variable, and in the cross-tabulation of the two variables, you'll want to pick something that meets the Cochran conditions (so no cells with zero counts, and at least 80% of the cells have counts of 5 or more.) Here, you should be providing the results of an appropriate chi-square test, accompanied by a useful visualization and description of the nature of the observed association.
+
+#### Analysis F. Create and analyze a $2 \times 2 \times M$ table, where $2 \leq M \leq 5$.
+
+Here, you will need to identify two binary categorical variables and an additional stratifying multi-categorical variable with 2-5 levels. You'll want to ensure that each count in the 2x2xM table is greater than zero, and that as many as possible of them are greater than 5. If this cannot be done with the variables you select initially, change variables. Here, you'll need to develop the table properly to allow you to conduct a Woolf test and estimate and interpret an odds ratio with Cochran-Mantel-Haenszel, regardless of the results of the Woolf test (but applying appropriate caveats should the assumptions of the CMH test be violated.)
+
+This page was last updated: `r Sys.time()`.

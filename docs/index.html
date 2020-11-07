@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>431 Project B Instructions for Fall 2020</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">431 Project B Instructions for Fall 2020</h1>
+
+</div>
+
+
+<div id="what-is-on-this-website" class="section level1">
+<h1>What is on this Website</h1>
+<ul>
+<li>Complete instructions for Study 1 (look in the Study 1: Class Survey section in the top menu)</li>
+<li>Complete instructions for Study 2 (look in the Study 2: Your Data section in the top menu)</li>
+<li>A Checklist of the tasks that need to be accomplished for Project B.</li>
+<li>The top menu also provides links to contact us, and to the 431 home page.</li>
+</ul>
+<div id="project-b-deliverables" class="section level2">
+<h2>Project B Deliverables</h2>
+<p>You will complete two Google Forms in November…</p>
+<ul>
+<li>The Class Survey (used for Study 1 data): <a href="survey1.html">details here</a>, due 2020-11-11 at 11 PM.</li>
+<li>The Study 2 Data Plan: <a href="your5.html">details here</a>, due Thursday 2020-11-19 at Noon. This form also gives you the opportunity to tell me whether you are working with a partner.</li>
+</ul>
+<p>The bulk of the work, though, is due on 2020-12-10 at noon.</p>
+<ul>
+<li>You will complete two studies, building a report using R Markdown for each, and those reports will be due on 2020-12-10 at noon.</li>
+<li>You will also communicate your findings to Dr. Love in some other way in December, and the details on that are not yet settled but will be as soon as possible.
+<ol style="list-style-type: decimal">
+<li>Some project groups will do a pre-recorded video presentation, not to exceed 10 minutes.</li>
+<li>The remaining project groups will be asked instead to have a live 15-minute Zoom meeting with Dr. Love to discuss their work.</li>
+</ol></li>
+<li>Finally, you’ll complete a short Google Form at the end of the project as a self-evaluation. It’ll take about 10 minutes, much like the one you did for Project A. It will be due with the other project materials at noon on 2020-12-10.</li>
+</ul>
+<div id="partnerships" class="section level4">
+<h4>Partnerships?</h4>
+<p>You can work alone, or with one other person on this project. If you work as a pair, you will commit to that in the <a href="your5.html">Study 2 Data Plan form</a>. Each of you will receive the team grade for the project reports, and an individual grade for the other components of the project.</p>
+</div>
+</div>
+</div>
+<div id="study-1" class="section level1">
+<h1>Study 1</h1>
+<ul>
+<li>Study 1 is about making descriptive and exploratory comparisons and summaries of data. It’s not (really) about building sophisticated statistical models.</li>
+<li>Study 1 involves taking a Class Survey of 65 items. The same survey was also taken by 67 students and TAs involved with 431 in Fall 2019.
+<ul>
+<li>You will take the survey by 2020-11-11 at 11 PM, and you’ll find it at <a href="http://bit.ly/431-projectB-survey" class="uri">http://bit.ly/431-projectB-survey</a>.</li>
+</ul></li>
+<li>After all students this year complete the survey, Dr. Love will then create data describing the results from 2019 and 2020 and share them with you.</li>
+<li>Every project group will thus start Study 1 with the same original data set of survey results, but you will each look at different survey items and identify different analytic questions.</li>
+<li>You will ingest, merge and clean the data in R, then select variables to complete any four out of a set of six potential analyses, described in these instructions.
+<ul>
+<li>You can do all six analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report.</li>
+<li>All of the material you need (from a statistical perspective) to do these analyses was covered in Classes 1-20.</li>
+</ul></li>
+<li>The <strong>Study 1: Class Survey</strong> <a href="survey1.html">section</a> of this website includes complete Study 1 instructions.
+<ul>
+<li>Study 1 Demonstration materials that may help you build your report will appear before the Thanksgiving break.</li>
+</ul></li>
+</ul>
+</div>
+<div id="study-2" class="section level1">
+<h1>Study 2</h1>
+<ul>
+<li>Study 2 is about building a model and making predictions. You will complete all elements of a data science project designed to create a statistical model for a quantitative outcome, then use it for prediction, and assess the quality of those predictions.</li>
+<li>Study 2 involves working with data either from NHANES or from a source you develop.
+<ul>
+<li>Dr. Love will provide detailed instructions regarding using NHANES data.</li>
+<li>If you want to use other data, you’ll have to get Dr. Love’s permission by filling out a form. Detailed specifications of what standards your data will have to meet will be provided.</li>
+</ul></li>
+<li>Every project group will be working with different data sets in Study 2, as a result.</li>
+<li>Study 2 involves the prediction of a quantitative outcome using a key predictor and some additional predictors in two linear regression models, and then comparing those two models using tools we’ve already seen, plus some tools we will develop in classes 22-24, so that you’ll have all relevant material covered before the Thanksgiving Break.</li>
+<li>The Study 2: Your Data section of this website includes complete Study 2 instructions.
+<ul>
+<li>Study 2 Demonstration materials that may help you build your report will appear before the Thanksgiving break.</li>
+</ul></li>
+</ul>
+</div>
+<div id="grading" class="section level1">
+<h1>Grading</h1>
+<p>Project B will be graded by Dr. Love on a scale from 0-100.</p>
+<ul>
+<li>Each study report (Study 1 and Study 2) is worth 30 points.</li>
+<li>The project presentation is also worth 30 points.</li>
+<li>The self-evaluation is worth 10 points.</li>
+<li>Late work on Project B will be severely penalized.</li>
+</ul>
+<p>You should know now that Dr. Love will provide extremely limited feedback on your Project B work - not much more than a grade, really, assuming you’ve done a generally creditable job. The timeline is simply too tight on my end, and this has been a tough year from which I need to recover in late December. I apologize in advance.</p>
+</div>
+<div id="questions" class="section level1">
+<h1>Questions?</h1>
+<p>If you have questions, let us know about them on Piazza using the projectB folder, or speak with Dr. Love before or after class, or discuss them with the TAs during office hours.</p>
+<p>This page was last updated: 2020-11-06 22:22:18.</p>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

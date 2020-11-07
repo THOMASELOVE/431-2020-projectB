@@ -1,0 +1,75 @@
+---
+title: "Study 2 Report Specifications"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Produce a beautiful HTML report. It should include:
+
+- a meaningful title: do not use the terms "Project" or "Project B" or "431" or "Study 2" in your title.
+- an easy-to-understand and easy-to-navigate table of contents
+- numbered sections and sub-sections
+- the full names of the author(s), properly formatted
+- the date, properly formatted using **r Sys.Date()** for the Date in your YAML)
+- no hashtags in the R results (use **knitr::opts_chunk$set(comment = NA)** to do this)
+- no warnings, and do what you can to hide unhelpful messages
+- no hidden code chunks
+- code-folding set to show (use **code_folding: show** in your YAML)
+
+## Headings you should use in the Study 2 report
+
+All of your work should be done in a fresh R project in a clean directory on your computer. 
+
+1. Setup and Data Ingest
+2. Merging the Data
+    - This is necessary if you're working with NHANES data, but it might not be if you aren't.
+3. Cleaning the Data 
+    - Note that it's only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.
+    - If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn't do that except in dire circumstances.
+    - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names.
+4. Your Question
+    - Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.
+5. Your Variables
+    - This section should have three subsections
+    - Create a subsection called Codebook first. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don't make me guess.
+    - Then create a subsection called Numerical Data Description, and present the results of  **Hmisc::describe** or **mosaic::favstats** or something similar for all variables of interest (e.g. leave out the subject identifier)
+6. Partitioning the Data
+    - Show how you split the data into two samples (a model training sample containing 70-80% of the data, and a model test sample containing the remaining 20-30%.) Details on how to do this [are available here](your4.html).
+    - Be sure to demonstrate that each subject in the original data wound up in either your training or your test sample.
+7. Transforming the Outcome
+    - Using your training sample, provide appropriate, well-labeled visualizations of your outcome, and investigate potential transformations of that outcome for the purpose of fitting regression models in a useful way. 
+    - Make a clear decision about what transformation (if any) you want to use. Don't use a transformation you cannot interpret.
+    - If your outcome is symmetric but with outliers, power transformations will not be of much help.
+    - If your outcome includes non-positive values, you may have to add the same value to each observation of the outcome before using power transformations. (For instance, if some of your values of your raw outcome are 0, you might add 1 to each observation before considering a transformation.)
+8. The Big Model
+    - Fit a linear regression model including all of your candidate predictors for your (possibly transformed) outcome within your training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
+9. The Smaller Model
+    - Fit a linear regression model using a subset of your predictors that is interesting (you can use an automated approach to select your subset, if you like), again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
+    - Your subset must include at least the key predictor.
+10. In-Sample Comparison
+    - It would be helpful to present three subsections here, entitled **Quality of Fit**, **Assessing Assumptions** and **Comparing the Models**
+    - In **Quality of Fit**, use **glance** for each of the models you fit (Big and Smaller) to summarize the quality of fit (focusing on $R^2$, adjusted $R^2$, AIC and BIC) within the training sample.
+    - In **Assessing Assumptions**, use `augment` to help you create and assess residual plots (specifically you should be looking at the assumptions of linearity, constant variance and Normality) for each of the two models. 
+    - In **Comparing the Models**, comment on the relative strengths and weaknesses of the two models within your training sample. Which model do you prefer, based on this information?
+11. Model Validation
+    - This, too, should have three subsections, entitled **Visualizing the Predictions**, **Summarizing the Errors** and **Comparing the Models**.
+    - **Visualizing the Predictions** Apply each of your models to the test sample to predict the outcome and provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?
+    - **Summarizing the Errors** Then summarize the following values, all on the scale of the original untransformed outcome, across the observations in your test sample, in an attractive table.
+        - square root of the mean squared prediction error (RMSPE)
+        - mean absolute prediction error (MAPE)
+        - maximum absolute prediction error (MAE)
+    - **Comparing the Models** Use the results from the previous two subsections to comment on the relative strengths and weaknesses of the two models within your test sample. Which model do you prefer now?
+12. Discussion
+    - This should have four subsections, as labeled below.
+    - **Chosen Model**
+        - Specify which model you've chosen, based on your conclusions from sections 10 and 11.
+    - **Answering My Question**
+        - Use the result of this model to answer your research question in a few sentences. Comment on whether your results matched up with your pre-analysis expectations, and also specify any limitations you see on this conclusion.
+    - **Next Steps**
+        - Discuss an interesting next step you would like to pursue to learn more about this sort of research question or to go further with these data.
+    - **Reflection**
+        - Briefly describe what you would have done differently in Study 2 had you known at the start of the project what you have learned by doing it.
+
+This page was last updated: `r Sys.time()`.

@@ -1,0 +1,23 @@
+---
+title: "Study 1 Demonstration Materials"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Links will be provided below to R Markdown and HTML versions of Sample Study 1 report materials as they become available.
+
+Remember that a general outline and set of instructions for the Study 1 report [is available here](survey5.html). A demonstration of an appropriate analysis for each of the required Study 1 analyses will be provided, as follows.
+
+- [Outline](survey5.html) of the Study 1 Report
+- Sample Analysis A: Compare two means/medians using paired samples
+- Sample Analysis B: Compare two means/medians using independent samples
+- Sample Analysis C: Compare 3-6 means/medians using independent samples
+- Sample Analysis D: Create and analyze a $2 \times 2$ table
+- Sample Analysis E: Create and analyze a $J \times K$ table, where $2 \leq J \leq 5$ and $3 \leq K \leq 5$
+- Sample Analysis F: Create and analyze a $2 \times 2 \times M$ table, where $2 \leq M \leq 5$.
+
+These materials will appear before the Thanksgiving Break.
+
+This page was last updated: `r Sys.time()`.

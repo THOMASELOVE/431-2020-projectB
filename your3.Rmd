@@ -1,0 +1,41 @@
+---
+title: "Using Something other than NHANES"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+
+## If you're using data from another source
+
+If you don't want to use NHANES data, you will need to obtain Dr. Love's approval to use something else, by filling out a form he will make available. Here are the data specifications.
+
+1. The data must be freely available to all, and there must be no risk associated with your using the data for this project of any kind. What does that mean?
+    - Your use of the data for this project must not be subject to IRB approval, or the approval of anyone other than you (this includes your principal investigator.) 
+    - The data must be available to the general public at no cost.
+    - There can be no protected health information of any kind. 
+    - The data must be completely de-identified.
+    - Dr. Love will need to see your source for the data in its entirety. You will need to be able to provide a link to a web page from which you (and Dr. Love) can download the raw data.
+2. The data must be of a certain type, so as to suit this project.
+    - The data must be cross-sectional, rather than longitudinal.
+        - The only exception to this rule would be data where a baseline set of predictors is measured, which might include the baseline measure of the outcome, and then the outcome (and only the outcome) is measured at a later time.
+    - The data must not be hierarchical, so everything must be measured at the subject level.
+        - We cannot have subjects nested in states, for instance, with some variables measured only at the state level included in your set of 5-10 variables.
+    - The data must not be from County Health Rankings, nor can they appear in any teaching repository of data.
+    - The data must not be pre-compiled as part of an R package, but rather available in raw form and ingested into R by you.
+    - Dr. Love has a strong preference for data that describe individual people or animals, as opposed to other types of "subjects". Who the subjects (rows) of your data are must be completely clear.
+    - The data you select must in all ways be suitable for the analyses required in Project B.
+    - Dr. Love can refuse to let you use a data set for any reason at all, and this includes the reason that he's tired of people using the data set.
+3. The data must include 5-10 variables (columns) measured on each subject, not including a coded identifier for each subject.
+    - This must include at least 2 quantitative variables, each of which shows more than 20 unique values. One of these quantitative variables will need to be your outcome.
+    - This must also include at least 2 categorical predictors.
+        - One of your two categorical predictors must have between 3 and 6 categories (variables with more than 6 categories must be collapsed down to no more than 6 levels.)
+        - Your other categorical predictors (of which you must have at least one) must have between 2 and 6 categories (again, collapse all categorical variables with more than 6 levels.)
+        - All of your categorical predictors must include at least 30 subjects at each level.
+4. The data must include 250-10,000 observations (rows), each describing a unique subject, for whom there must be a coded identifier.
+    - You will need a minimum of 250 complete cases across all of the 5-10 variables you identified.
+    - If there are more than 10,000 observations, sample down to 10,000 with complete data on your selected variables to create a new version of your raw data. 
+    
+    
+This page was last updated: `r Sys.time()`.

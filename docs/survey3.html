@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Getting the Survey Data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Getting the Survey Data</h1>
+
+</div>
+
+
+<p>The data will be provided in two files, one describing data from the 2019 administration of the survey, and another describing data from the 2020 administration.</p>
+<ul>
+<li>The 2019 data are available now, as an Excel (.xlsx) file, which can be found on our Shared Google Drive in the <a href="https://drive.google.com/drive/folders/1J-ydi6dEFNd_39ddbKsiyyssNqqY5y56?usp=sharing">Project B folder</a>.
+<ul>
+<li>The posted file is named <strong>431_projectB_survey_data_2019.xlsx</strong>.</li>
+<li>We encourage the use of the <strong>read_excel</strong> function from the <strong>readxl</strong> package to ingest the data into R.</li>
+</ul></li>
+<li>The 2020 data will be posted to that same folder on our Shared Drive after the 2020 administration of the survey is complete.</li>
+</ul>
+<p>You will need to merge the 2019 and 2020 data sets, within R, to do the project work.</p>
+<div id="how-do-i-merge-the-data" class="section level2">
+<h2>How do I merge the data?</h2>
+<p>Suppose you have imported the data into R and created two tibbles, each of which contain one of the data sets Dr. Love has provided.</p>
+<ul>
+<li>Verify that each tibble contains exactly the same variable names in the same order.
+<ul>
+<li>You can check this with the <strong>compare_df_cols</strong> function from the <strong>janitor</strong> package.</li>
+</ul></li>
+<li>Verify that each subject in each tibble is identified by a unique subject ID code.
+<ul>
+<li>You can check this with the <strong>n_distinct</strong> function to see if the number of unique (distinct) subject IDs is equal to the number of rows, obtained with <strong>n_row</strong> for each tibble.</li>
+</ul></li>
+</ul>
+<p>Then, to create a merged version of the data including all subjects from both tibbles, we could use any of the following to combine the two tibbles into one:</p>
+<ul>
+<li>the <strong>bind_rows</strong> function (<a href="https://dplyr.tidyverse.org/reference/bind.html">as described here</a>)</li>
+<li>the <strong>union</strong> function (<a href="https://dplyr.tidyverse.org/reference/setops.html">as described here</a>), or</li>
+<li>the <strong>full_join</strong> function (<a href="https://dplyr.tidyverse.org/reference/join.html">as described here</a>)</li>
+</ul>
+<p>each of which is part of the <code>dplyr</code> package, which is part of the core <code>tidyverse</code>. There is no reason to use more than one of these approaches. Simply pick one that works for you, and use that.</p>
+<p>To learn more about merging in R, I suggest:</p>
+<ol style="list-style-type: decimal">
+<li>RStudio’s <a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data Transformation Cheat Sheet</a> has some descriptions of methods for Combining Tables, with illustrations.</li>
+<li>The folks at STAT545 have a great “<a href="https://stat545.com/join-cheatsheet.html">cheat sheet</a>” on this as well, which has a more expansive description of some of the ideas.</li>
+<li>The material on <a href="https://r4ds.had.co.nz/relational-data.html">Relational Data in R for Data Science</a> should also give you a useful introduction to the ideas and code involved.</li>
+</ol>
+<p>After you create the merged tibble, be <strong>certain</strong> that you haven’t introduced any problems.</p>
+<ul>
+<li>Your resulting tibble should describe 73 variables, and the correct number of subjects, which is just the total for the 2019 data (67 subjects) and the 2020 data (as yet unknown, but likely to be around 80 subjects.)</li>
+</ul>
+</div>
+<div id="what-do-the-data-sets-look-like" class="section level1">
+<h1>What do the data sets look like?</h1>
+<p>Dr. Love placed a Google Sheet called “<strong>Fall 2020 Project B Study 1 Class Survey Items and Scales</strong>” in the <a href="https://drive.google.com/drive/folders/1J-ydi6dEFNd_39ddbKsiyyssNqqY5y56?usp=sharing">Project B folder</a> in our Shared Google Drive. As always, you’ll have to be logged into Google via CWRU to see the Sheet.</p>
+<p>That sheet contains the following tabs:</p>
+<ul>
+<li><strong>Data Elements</strong> a list of all 73 variables that will be provided to you, containing their names, the description, the type of variable, and the possible responses.</li>
+<li>Descriptions of the scoring and grouping rules for each of the three scales
+<ul>
+<li><strong>PSS</strong>: Perceived Stress Scale</li>
+<li><strong>HIOS</strong>: Health Information Orientation Scale</li>
+<li><strong>mISI</strong>: Modified Insomnia Severity Index</li>
+</ul></li>
+<li><strong>Hmisc::describe</strong> results from the 2019 data across all 73 variables, so you can check to see if your results match those of Dr. Love for that subset of the full data.</li>
+</ul>
+<p>This page was last updated: 2020-11-06 22:22:21.</p>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

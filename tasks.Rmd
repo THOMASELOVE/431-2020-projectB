@@ -1,0 +1,43 @@
+---
+title: "431 Project B Task List"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+# Early Tasks
+
+1. Fill out [the Class Survey](survey1.html) by visiting http://bit.ly/431-projectB-survey. This is due on Wednesday 2020-11-11 at 9 PM.
+2. Fill out [the Study 2 Data Plan](your5.html) by visiting http://bit.ly/431-projectB-data-plan. This is due on Thursday 2020-11-19 at Noon.
+
+# Submitting Your Study 1 Report
+
+Your Study 1 Report is to be submitted to Canvas by 2020-12-10 at Noon.
+
+- This submission should include both your R Markdown and HTML results.
+- Be sure that the names of your R Markdown and HTML files clearly identify whose project is being submitted, and an indication that these files refer to study 1.
+- If you are working with a partner, one of you should submit both the Study 1 and Study 2 reports to Canvas, and the other person should submit a one-page note to Canvas (word or PDF is best) containing your name, and stating something like "I worked on Project B with [your partner's name] and they will submit Project B for our group."
+
+# Submitting Your Study 2 Report
+
+Your Study 2 Report is to be submitted to Canvas by 2020-12-10 at Noon.
+
+- This submission should include both your R Markdown and HTML results.
+- In addition, if you worked with any data other than NHANES, your submission also needs to include your data (in the form you used to ingest the data in your R Markdown file, so that we can run your R Markdown code and obtain your HTML results.)
+- Be sure that the names of your R Markdown and HTML files clearly identify whose project is being submitted, and an indication that these files refer to study 2.
+- Again, if you are working with a partner, one of you should submit both the Study 1 and Study 2 reports to Canvas, and the other person should submit a one-page note to Canvas (word or PDF is best) containing your name, and stating something like "I worked on Project B with [your partner's name] and they will submit Project B for our group."
+
+# Oral Presentation of Results
+
+1. Some project groups will do a pre-recorded video presentation, not to exceed 10 minutes, which will be due along with the other project materials at noon on 2020-12-10.
+2. The remaining project groups will be asked instead to have a live 15-minute Zoom meeting with Dr. Love to discuss their work at a time in December to be determined.
+
+Details on the presentations will be settled prior to 2020-11-30.
+
+# Self-Evaluation for Project B
+
+The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-12-01. It will be due with the other project materials at noon on 2020-12-10.
+
+
+This page was last updated: `r Sys.time()`.

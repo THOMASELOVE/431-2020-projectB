@@ -1,0 +1,54 @@
+name: "431-projectB"
+output_dir: "docs"
+navbar:
+  title: "431 Project B"
+  type: inverse
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Study 1: Class Survey"
+      menu:
+        - text: "Taking the Study 1 Survey"
+          href: survey1.html
+        - text: "Survey Items and Scales"
+          href: survey2.html
+        - text: "Getting the Study 1 Data"
+          href: survey3.html
+        - text: "Required Study 1 Analyses" 
+          href: survey4.html
+        - text: "Study 1 Report Specifications"
+          href: survey5.html
+        - text: "Study 1 Demonstrations"
+          href: survey6.html
+    - text: "Study 2: Your Data"
+      menu:
+        - text: "Selecting a Data Source"
+          href: your1.html
+        - text: "Using NHANES data"
+          href: your2.html
+        - text: "Using Something Else"
+          href: your3.html
+        - text: "Required Study 2 Analyses" 
+          href: your4.html
+        - text: "The Study 2 Data Plan"
+          href: your5.html
+        - text: "Study 2 Report Specifications"
+          href: your6.html
+        - text: "Study 2 Demonstrations"
+          href: your7.html
+    - text: "Checklist"
+      href: tasks.html
+  right:
+    - text: "Contact Us"
+      href: https://thomaselove.github.io/431/contact.html
+    - text: "431 Homepage"
+      href: https://thomaselove.github.io/431/
+output:
+  html_document:
+    theme: simplex
+    highlight: kate
+    includes:
+      after_body: footer.html
+    lib_dir: site_libs
+    self_contained: no
+

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Study 1 Report Specifications</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Study 1 Report Specifications</h1>
+
+</div>
+
+
+<p>Produce a beautiful HTML report. It should include:</p>
+<ul>
+<li>a meaningful title: if you need a suggestion, use “Exploring the 431 Class Survey” rather than something like “Study 1” or “Project B Study 1”.</li>
+<li>an easy-to-understand and easy-to-navigate table of contents</li>
+<li>numbered sections and sub-sections</li>
+<li>the full names of the author(s), properly formatted</li>
+<li>the date, properly formatted using <strong>r Sys.Date()</strong> for the Date in your YAML)</li>
+<li>no hashtags in the R results (use <strong>knitr::opts_chunk$set(comment = NA)</strong> to do this.)</li>
+<li>no warnings, and do what you can to hide unhelpful messages</li>
+<li>no hidden code chunks</li>
+<li>code-folding set to show (use <strong>code_folding: show</strong> in your YAML)</li>
+</ul>
+<div id="headings-you-should-use-in-the-study-1-report" class="section level2">
+<h2>Headings you should use in the Study 1 report</h2>
+<p>All of your work should be done in a fresh R project in a clean directory on your computer. That directory should include a <strong>data</strong> subdirectory, in which you will need to put the two <a href="survey3.html">raw data sets Dr. Love will provide</a>, and the <strong>Love-boost.R</strong> script.</p>
+<ol style="list-style-type: decimal">
+<li>Setup and Data Ingest
+<ul>
+<li>We recommend you use <strong>read_excel</strong> to read in the Excel data for 2019.</li>
+<li>We recommend you use a similarly appropriate tool to read in the data for 2020 when Dr. Love makes it available.</li>
+</ul></li>
+<li>Merging the Data
+<ul>
+<li>Be sure to demonstrate that the final tibble you wind up with after merging is correct, with 73 variables and the appropriate number of rows.</li>
+</ul></li>
+<li>Cleaning the Data
+<ul>
+<li>Note that it’s only necessary to clean the variables you will actually use in your four analyses below. Feel free to select only those variables here to create your clean tibble.</li>
+<li>Do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> after merging, but I wouldn’t otherwise change the variable names.</li>
+<li>If you create a new categorical variable from one of the existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.</li>
+</ul></li>
+</ol>
+<p>and any four of the following six sections…</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Analysis A: Comparing 2 Means with Paired Samples</li>
+<li>Analysis B: Comparing 2 Means with Independent Samples</li>
+<li>Analysis C: Comparing X Means with Independent Samples (where you’d substitute in the number of means you’re comparing for X)</li>
+<li>Analysis D: Analyzing a 2x2 table</li>
+<li>Analysis E: Analyzing a JxK table (where you substitute in the values for J and K)</li>
+<li>Analysis F: Analyzing a 2x2xM table (where you substitute in the value of M)</li>
+</ol>
+<div id="within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections" class="section level3">
+<h3>Within each of the four analyses you present, I’d have four (numbered) subsections:</h3>
+<ol style="list-style-type: decimal">
+<li>The Question
+<ul>
+<li>Start by describing what you want to study, and then specify a research question (which should end with a question mark and be something you can resolve with the planned analysis.)</li>
+<li>Don’t boil the ocean here. You’re looking for a research question that can be reasonably addressed in a survey of less than 150 people, so it has to be pretty straightforward.</li>
+<li>If you have a pre-existing belief about what will happen, before you look at the data, please feel encouraged to include a statement about that belief before specifying your question.</li>
+</ul></li>
+<li>Describing The Data
+<ul>
+<li>This should start with specifications of what each of the variables you are studying in this analysis actually mean.</li>
+<li>Then provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.</li>
+</ul></li>
+<li>Main Analysis
+<ul>
+<li>Show your work, and comment on whatever decisions you make.</li>
+<li>Be sure to present and justify the assumptions you are making.</li>
+</ul></li>
+<li>Conclusions
+<ul>
+<li>Answer your research question, by clearly linking the analytic results to what you were asking at the start.</li>
+<li>If you can see a logical next step for the analysis of the question you asked, specify it. Also, if you specified a pre-existing belief about what would happen, reflect on that in light of the data.</li>
+</ul></li>
+</ol>
+<p>This page was last updated: 2020-11-06 22:22:22.</p>
+</div>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

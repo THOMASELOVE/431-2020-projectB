@@ -1,0 +1,24 @@
+---
+title: "Study 2 Demonstration Materials"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Links will be provided below to R Markdown and HTML versions of Sample Study 2 demonstration materials as they become available.
+
+Remember that a general outline and set of instructions for the Study 2 report [is available here](your6.html). 
+
+A demonstration of four key elements of Study 2 analyses will be linked here, specifically...
+
+- partitioning the data into training and test samples
+- considering transformations for an outcome
+- an in-sample (training sample) comparison of models
+- an out-of-sample (test sample) comparison of models
+
+These materials will appear before the Thanksgiving Break.
+
+This page was last updated: `r Sys.time()`.
+
+

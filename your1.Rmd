@@ -1,0 +1,21 @@
+---
+title: "Selecting a Data Source"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+## Your Options: NHANES or Something Else
+
+You have two options in terms of a data set you will use in Study 2.
+
+### Data from NHANES (National Health and Nutrition Examination Survey). 
+
+- Details on what is required if you're working with NHANES data [are found here](your2.html).
+
+### Data you select from any other source that meets with Dr. Love's approval. 
+
+- Details on what is required if you're not working with NHANES data [are found here](your3.html).
+
+This page was last updated: `r Sys.time()`.

@@ -1,0 +1,27 @@
+---
+title: "NHANES Example"
+author: "Thomas E. Love"
+date: "11/5/2020"
+output: html_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(comment = NA)
+
+library(nhanesA)
+library(janitor)
+library(tidyverse)
+```
+
+```{r}
+demo_J <- nhanes('DEMO_J') %>% as_tibble()
+```
+
+```{r}
+bpx_j <- nhanes('BPX_J') %>% as_tibble()
+```
+
+```{r}
+saveRDS(demo_J, "demoJ.Rds")
+```
+

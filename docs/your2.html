@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Using NHANES Data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      code.sourceCode > span { display: inline-block; line-height: 1.25; }
+  code.sourceCode > span { color: inherit; text-decoration: inherit; }
+  code.sourceCode > span:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+  }
+  pre.numberSource code
+    { counter-reset: source-line 0; }
+  pre.numberSource code > span
+    { position: relative; left: -4em; counter-increment: source-line; }
+  pre.numberSource code > span > a:first-child::before
+    { content: counter(source-line);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      background-color: #ffffff;
+      color: #a0a0a0;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+  div.sourceCode
+    { color: #1f1c1b; background-color: #ffffff; }
+  @media screen {
+  code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+  }
+  code span. { color: #1f1c1b; } /* Normal */
+  code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+  code span.an { color: #ca60ca; } /* Annotation */
+  code span.at { color: #0057ae; } /* Attribute */
+  code span.bn { color: #b08000; } /* BaseN */
+  code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+  code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #924c9d; } /* Char */
+  code span.cn { color: #aa5500; } /* Constant */
+  code span.co { color: #898887; } /* Comment */
+  code span.cv { color: #0095ff; } /* CommentVar */
+  code span.do { color: #607880; } /* Documentation */
+  code span.dt { color: #0057ae; } /* DataType */
+  code span.dv { color: #b08000; } /* DecVal */
+  code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+  code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+  code span.fl { color: #b08000; } /* Float */
+  code span.fu { color: #644a9b; } /* Function */
+  code span.im { color: #ff5500; } /* Import */
+  code span.in { color: #b08000; } /* Information */
+  code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+  code span.op { color: #1f1c1b; } /* Operator */
+  code span.ot { color: #006e28; } /* Other */
+  code span.pp { color: #006e28; } /* Preprocessor */
+  code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+  code span.sc { color: #3daee9; } /* SpecialChar */
+  code span.ss { color: #ff5500; } /* SpecialString */
+  code span.st { color: #bf0303; } /* String */
+  code span.va { color: #0057ae; } /* Variable */
+  code span.vs { color: #bf0303; } /* VerbatimString */
+  code span.wa { color: #bf0303; } /* Warning */
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span. { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Using NHANES Data</h1>
+
+</div>
+
+
+<p>If you select the NHANES option for Study 2, then you will be using data from the <a href="https://wwwn.cdc.gov/nchs/nhanes/Default.aspx">National Health and Nutrition Examination Survey</a>.</p>
+<p>If you decide to use some other data set instead for Study 2, then you should <a href="your3.html">visit this page</a>.</p>
+<div id="about-nhanes-from-the-nhanes-website" class="section level2">
+<h2>About NHANES (from <a href="https://www.cdc.gov/nchs/nhanes/about_nhanes.htm">the NHANES website</a>)</h2>
+<p>The National Health and Nutrition Examination Survey (NHANES) is a program of studies designed to assess the health and nutritional status of adults and children in the United States. The survey is unique in that it combines interviews and physical examinations. NHANES is a major program of the National Center for Health Statistics (NCHS). NCHS is part of the Centers for Disease Control and Prevention (CDC) and has the responsibility for producing vital and health statistics for the Nation.</p>
+<p>The NHANES program began in the early 1960s and has been conducted as a series of surveys focusing on different population groups or health topics. In 1999, the survey became a continuous program that has a changing focus on a variety of health and nutrition measurements to meet emerging needs. The survey examines a nationally representative sample of about 5,000 persons each year. These persons are located in counties across the country, 15 of which are visited each year.</p>
+<p>The NHANES interview includes demographic, socioeconomic, dietary, and health-related questions. The examination component consists of medical, dental, and physiological measurements, as well as laboratory tests administered by highly trained medical personnel.</p>
+<p>Findings from this survey will be used to determine the prevalence of major diseases and risk factors for diseases. Information will be used to assess nutritional status and its association with health promotion and disease prevention. NHANES findings are also the basis for national standards for such measurements as height, weight, and blood pressure. Data from this survey will be used in epidemiological studies and health sciences research, which help develop sound public health policy, direct and design health programs and services, and expand the health knowledge for the Nation.</p>
+</div>
+<div id="general-advice-for-nhanes-learning-about-the-available-data" class="section level2">
+<h2>General Advice for NHANES: Learning About The Available Data</h2>
+<p>The links in this section go to the <a href="https://wwwn.cdc.gov/nchs/nhanes/Default.aspx">Survey Data and Documentation section</a> of the <a href="https://www.cdc.gov/nchs/nhanes/index.htm">NHANES website</a>.</p>
+<ol style="list-style-type: decimal">
+<li>We strongly encourage the use of <a href="https://wwwn.cdc.gov/Nchs/Nhanes/continuousnhanes/default.aspx?BeginYear=2017">the 2017-18 NHANES data</a> for Project B.
+<ul>
+<li>This is the most recent public data (it was made available in June 2020).</li>
+<li>Dr. Love will consider projects using NHANES data from an earlier cycle only if relevant questions are not available in the 2017-18 cycle.</li>
+</ul></li>
+<li>You are required to use variables taken from <strong>at least three</strong> different NHANES data sets. This must include the Demographics data set, in addition to two other data sets taken from at least one of the other four available data groups (Dietary, Examination, Laboratory and Questionnaire.)
+<ul>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;CycleBeginYear=2017">Demographics data group</a> should be part of all projects, and it contains a single data set.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Dietary&amp;CycleBeginYear=2017">Dietary data group</a> includes 14 different data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&amp;CycleBeginYear=2017">Examination data group</a> includes 7 data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory&amp;CycleBeginYear=2017">Laboratory data group</a> contains over 30 data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&amp;CycleBeginYear=2017">Questionnaire data group</a> also contains over 30 data sets.</li>
+</ul></li>
+<li>You will need to use the <strong>nhanesA</strong> package in R to import and work with the available data.</li>
+</ol>
+</div>
+<div id="getting-the-nhanes-data" class="section level2">
+<h2>Getting the NHANES data</h2>
+<p>Visit the NHANES website and identify the data you want to view.</p>
+<ul>
+<li>For example, the Demographic Variables and Sample Weights for NHANES 2017-18 <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;CycleBeginYear=2017">are described here</a>.</li>
+<li>Each NHANES data set is associated with a Doc File (which stands for Data Documentation, Codebook and Frequencies). For instance, <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm">here’s the one</a> for Demographics in 2017-18. This file can be viewed online (it’s an HTML file) and it will tell you what variables are included in that data set.</li>
+<li>Each NHANES data set is available as a SAS transport file. For example, it’s the <strong>DEMO_J</strong> file for Demographics in 2017-18, <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;CycleBeginYear=2017">as you can see here</a>.</li>
+</ul>
+</div>
+<div id="using-the-nhanesa-package" class="section level2">
+<h2>Using the nhanesA package</h2>
+<p>Once you’ve selected the data sets from NHANES that you want to use in your project (remember that you need at least 3), the <strong>nhanesA</strong> package in R can be used to obtain them.</p>
+<p>Here’s a little vignette (now a bit out of date) <a href="https://cran.r-project.org/web/packages/nhanesA/vignettes/Introducing_nhanesA.html">introducing nhanesA</a> from Christopher Endres, who built the package. The key functions in the <strong>nhanesA</strong> package that I think you might use are those described in that vignette, but the main one is simply called <strong>nhanes</strong>.</p>
+<div id="an-example" class="section level3">
+<h3>An Example</h3>
+<p>For example, suppose we want to load the Blood Pressure data from the <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&amp;CycleBeginYear=2017">2017-18 Examination files</a> at NHANES (contained in the BPX_J data file) into a tibble called bp_data in R.</p>
+<p>We would use the following code, which will take a few minutes to run.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(nhanesA)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>bp_raw &lt;-<span class="st"> </span><span class="kw">nhanes</span>(<span class="st">&#39;BPX_J&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tibble</span>()</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">saveRDS</span>(bp_raw, <span class="st">&quot;data/BPX_J.Rds&quot;</span>)</span></code></pre></div>
+<p>Once you’ve downloaded the file once, you should save it as an R data frame, and then comment out the initial code you used to pull down the data in R. Then, when you rerun, it’ll be all set. Remember to create a data subfolder in your R Project directory for Study 2 first before you run this code.</p>
+<p>So your final presentation in Project B should instead look like this, which will run much more quickly.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(nhanesA)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># pull in data from BPX_J from NHANES and save it</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># bp_raw &lt;- nhanes(&#39;BPX_J&#39;) %&gt;% tibble()</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># saveRDS(bp_raw, &quot;data/BPX_J.Rds&quot;)</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># Now that data are saved, I can just read in the tibble</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>bp_raw &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/BPX_J.Rds&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="merging-nhanes-files" class="section level2">
+<h2>Merging NHANES files</h2>
+<p>You will need to include data from multiple tibbles (data sets) pulled down in your project. I suggest you first select only those variables you intend to use in your analytic data file from each individual tibble you have created. This should always include the SEQN variable in every tibble, since that is what you will use to match up responses across those tibbles.</p>
+<p>To merge a demographics tibble called <strong>DEMO</strong> with a <strong>BPX</strong> tibble to create a tibble called <strong>NEW</strong> that contains the variables from both <strong>DEMO</strong> and <strong>BPX</strong> for all of the subjects contained in <strong>DEMO</strong>, I’d use a <strong>left_join</strong>, as follows.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>NEW &lt;-<span class="st"> </span><span class="kw">left_join</span>(DEMO, BPX, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
+<p>I’d then use another <strong>left_join</strong> to merge this NEW result with another tibble (say, the <strong>HDL_J</strong> tibble) and so on.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>NEW2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(NEW, HDL_J, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
+<p>Then, when I was done merging and cleaning the data I would be sure to save that result as a new Rds file, just in case I needed it again.</p>
+</div>
+<div id="which-variables-subjects-should-i-use" class="section level2">
+<h2>Which variables / subjects should I use?</h2>
+<p>That’s up to you. Find variables of interest in the description files, and pull them out and see if they will work for you.</p>
+<ul>
+<li>Focus on subjects who have a <strong>RIDSTATR</strong> value of 2 (meaning they were both interviewed and examined) - this variable is part of the Demographics file.
+<ul>
+<li>For 2017-18, there are 8,704 such subjects.</li>
+</ul></li>
+<li>I encourage you to filter your final set of variables to complete cases, and reflect on how many observations you wind up with
+<ul>
+<li>In many cases, you should have well over 8000, but depending on what you select, you may have a much smaller subset, and you should be able to explain to us why that is the case, if it is.</li>
+<li>For example, if you’re studying something that is only measured in females, or in children, you’ll have a smaller sample for that reason, and you need to make that clear to us in your report.</li>
+</ul></li>
+</ul>
+<p>This page was last updated: 2020-11-06 22:22:32.</p>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

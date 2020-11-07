@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Description of Survey Items and Scales</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project B</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 1: Class Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="survey1.html">Taking the Study 1 Survey</a>
+    </li>
+    <li>
+      <a href="survey2.html">Survey Items and Scales</a>
+    </li>
+    <li>
+      <a href="survey3.html">Getting the Study 1 Data</a>
+    </li>
+    <li>
+      <a href="survey4.html">Required Study 1 Analyses</a>
+    </li>
+    <li>
+      <a href="survey5.html">Study 1 Report Specifications</a>
+    </li>
+    <li>
+      <a href="survey6.html">Study 1 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Study 2: Your Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your1.html">Selecting a Data Source</a>
+    </li>
+    <li>
+      <a href="your2.html">Using NHANES data</a>
+    </li>
+    <li>
+      <a href="your3.html">Using Something Else</a>
+    </li>
+    <li>
+      <a href="your4.html">Required Study 2 Analyses</a>
+    </li>
+    <li>
+      <a href="your5.html">The Study 2 Data Plan</a>
+    </li>
+    <li>
+      <a href="your6.html">Study 2 Report Specifications</a>
+    </li>
+    <li>
+      <a href="your7.html">Study 2 Demonstrations</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="tasks.html">Checklist</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Description of Survey Items and Scales</h1>
+
+</div>
+
+
+<p>The 2020 Class Survey for 431 includes 65 items.</p>
+<ul>
+<li>For information on taking the survey, <a href="survey1.html">go here</a> (deadline is 2020-11-11 at 11 PM).</li>
+<li>For information on getting the data once the survey is complete, <a href="survey3.html">go here</a>.</li>
+</ul>
+<p>Survey items include:</p>
+<ul>
+<li>The Perceived Stress Scale (10 items)</li>
+<li>The Health Information Orientation Scale (8 items)</li>
+<li>A modified Insomnia Severity Index (7 items)</li>
+<li>40 items that are not part of a scale (these were developed by students in previous 431 classes)</li>
+</ul>
+<p>Next, we list each of these items, and describe the scoring and grouping of the three scales.</p>
+<div id="the-perceived-stress-scale-10-items" class="section level2">
+<h2>The Perceived Stress Scale (10 items)</h2>
+<p>In the past month, how often have you …</p>
+<p>(available responses are Never, Almost Never, Sometimes, Fairly Often and Very Often)</p>
+<ul>
+<li><strong>PSS-01</strong>. been upset because of something that happened unexpectedly?</li>
+<li><strong>PSS-02</strong>. felt that you were unable to control the important things in your life?</li>
+<li><strong>PSS-03</strong>. felt nervous and stressed?</li>
+<li><strong>PSS-04</strong>. felt confident about your ability to handle your personal problems?</li>
+<li><strong>PSS-05</strong>. felt that things were going your way?</li>
+<li><strong>PSS-06</strong>. found that you could not cope with all the things that you had to do?</li>
+<li><strong>PSS-07</strong>. been able to control irritations in your life?</li>
+<li><strong>PSS-08</strong>. felt that you were on top of things?</li>
+<li><strong>PSS-09</strong>. been angered because of things that happened that were outside of your control?</li>
+<li><strong>PSS-10</strong>. felt difficulties were piling up so high that you could not overcome them?</li>
+</ul>
+<div id="scoring-for-the-pss" class="section level3">
+<h3>Scoring for the PSS</h3>
+<p>Each item on the Perceived Stress Scale is measured on a scale from 0-4. Sum the item scores for a subject to determine their PSS score, between 0 and 40.</p>
+<ul>
+<li>For items PSS-01, -02, -03, -06, -09, and -10, the scale is 0 for Never, 1 for Almost Never, 2 for Sometimes, 3 for Fairly Often and 4 for Very Often</li>
+<li>For items PSS-04, -05, -07 and -08, the scale is reversed, so 4 for Never, 3 for Almost Never, 2 for Sometimes, 1 for Fairly Often and 0 for Very Often</li>
+</ul>
+<p>We will generally treat the PSS score as quantitative, with higher PSS scores indicating higher perceived stress. There are popular cutoffs creating three categories at:</p>
+<ul>
+<li>0-13 indicating low perceived stress</li>
+<li>14-26 indicating moderate perceived stress, and</li>
+<li>27-40 indicating high perceived stress.</li>
+</ul>
+</div>
+</div>
+<div id="the-health-information-orientation-scale-8-items" class="section level2">
+<h2>The Health Information Orientation Scale (8 items)</h2>
+<p>Each of these are answered on a scale of 1 = Strongly Disagree to 5 = Strongly Agree</p>
+<ul>
+<li><strong>HIOS-1</strong>. I make it a point to read and watch stories about health.</li>
+<li><strong>HIOS-2</strong>. I really enjoy learning about health issues.</li>
+<li><strong>HIOS-3</strong>. To be and stay healthy it’s critical to be informed about health issues.</li>
+<li><strong>HIOS-4</strong>. The amount of health information available today makes it easier for me to take care of my health.</li>
+<li><strong>HIOS-5</strong>. When I take medicine, I try to get as much information as possible about its benefits and side effects.</li>
+<li><strong>HIOS-6</strong>. I need to know about health issues so I can keep myself and my family healthy.</li>
+<li><strong>HIOS-7</strong>. Before making a decision about my health, I find out everything I can about this issue.</li>
+<li><strong>HIOS-8</strong>. It’s important to me to be informed about health issues.</li>
+</ul>
+<div id="scoring-for-the-hios" class="section level3">
+<h3>Scoring for the HIOS</h3>
+<p>Each item on the Health Information Orientation Scale is measured on a scale from 1-5. Take the mean of all items to which the subject responds to establish their HIOS score.</p>
+<p>We will generally treat the HIOS score as quantitative, with higher HIOS scores indicating a stronger orientation towards gathering health information.</p>
+<p>There are popular cutoffs creating five categories at:</p>
+<ul>
+<li>0 - 1.50 indicating very low health information orientation</li>
+<li>1.51 - 2.50 indicating low health information orientation</li>
+<li>2.51 - 3.50 indicating moderate health information orientation</li>
+<li>3.51 - 4.50 indicating high health information orientation, and</li>
+<li>4.51 - 5.00 indicating very high health information orientation.</li>
+</ul>
+</div>
+</div>
+<div id="modified-insomnia-severity-index-7-items" class="section level2">
+<h2>modified Insomnia Severity Index (7 items)</h2>
+<p>responses for items 1-3 are None (0), Mild (1), Moderate (2), Severe (3), Very Severe (4)</p>
+<ul>
+<li><strong>mISI-1</strong>. In the past two weeks, how much difficulty did you have falling asleep?</li>
+<li><strong>mISI-2</strong>. In the past two weeks, how much difficulty did you have staying asleep?</li>
+<li><strong>mISI-3</strong>. In the past two weeks, how much difficulty did you have with waking up too early?</li>
+</ul>
+<p>responses for item 4 are Very Satisfied (0), Satisfied (1), Neutral (2), Dissatisfied (3), Very Dissatisfied (4)</p>
+<ul>
+<li><strong>mISI-4</strong>. How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?</li>
+</ul>
+<p>responses for items 5-7 are Not at all (0), A Little (1), Somewhat (2), Much (3), Very Much (4)</p>
+<ul>
+<li><strong>mISI-5</strong>. How NOTICEABLE to others do you think your sleep pattern is in terms of impairing the quality of your life?</li>
+<li><strong>mISI-6</strong>. How WORRIED/DISTRESSED are you about your current sleep?</li>
+<li><strong>mISI-7</strong>. To what extent do you consider your sleep pattern to INTERFERE with your daily functioning (e.g. daytime fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?</li>
+</ul>
+<div id="scoring-for-the-misi" class="section level3">
+<h3>Scoring for the mISI</h3>
+<p>Each item involves a choice from five possible responses, scored 0-4. Add the 7 item scores to estimate the index. Higher scores on the index indicate more substantial problems with sleep. There are popular cutoffs creating four categories of sleep problems, which we might interpret as:</p>
+<ul>
+<li>Non-meaningful (or modest) sleep problems: 0 - 7 points</li>
+<li>Low severity sleep problems: 8 - 14 points</li>
+<li>Moderate severity sleep problems: 15 - 21 points</li>
+<li>High severity sleep problems: 22 - 28 points</li>
+</ul>
+</div>
+</div>
+<div id="homegrown-items-that-arent-part-of-a-scale" class="section level2">
+<h2>40 “Homegrown” Items That Aren’t Part of a Scale</h2>
+<ol style="list-style-type: decimal">
+<li>Were you born in the United States? (Yes/No)</li>
+<li>Is English the language you speak better than any other? (Yes/No)</li>
+<li>Do you identify as female? (Yes/No)</li>
+<li>Do you wear prescription glasses or contact lenses? (Yes/No)</li>
+<li>Before taking 431, had you ever used R before? (Yes/No)</li>
+<li>Are you currently married or in a stable domestic relationship? (Yes/No)</li>
+<li>Have you smoked 100 cigarettes or more in your entire life? (Yes/No)</li>
+<li>In what year were you born? (year)</li>
+<li>How would you rate your current health overall? (Excellent / Very Good / Good / Fair / Poor)</li>
+<li>For how long, in months, have you lived in Northeast Ohio? (0-?)</li>
+<li>What is your height, in inches?
+<ul>
+<li>If you are five feet, eight inches tall, please write 68 inches. To convert from centimeters to inches, multiply your height in centimeters by 0.3937, and then round the result to the nearest inch.</li>
+</ul></li>
+<li>What is your weight, in pounds?
+<ul>
+<li>To convert from kilograms to pounds, multiply your weight in kilograms by 2.2046, and then round the result to the nearest pound.</li>
+</ul></li>
+<li>What is your pulse rate, in beats per minute?
+<ul>
+<li>Please either use a tracking device, or count your pulse for 15 seconds then multiply by 4.</li>
+</ul></li>
+<li>Last week, on how many days did you exercise? (0, 1, 2, 3, 4, 5, 6, 7)</li>
+<li>Last night, how many hours of sleep did you get? (number of hours)</li>
+<li>In the past month, did you buy most of the groceries you consumed? (Yes/No)</li>
+<li>How confident are you in your ability to prepare a full meal? (0 = not confident at all, 100 = extremely confident)</li>
+<li>As you were growing up, what percentage of your meals were home-cooked? (0-100)</li>
+<li>In the last 30 days, about how many times did someone in your household shop for groceries? (count)</li>
+<li>Last week, how many meals did you eat that contained vegetables? (0-21)</li>
+<li>How long did it take you to fall asleep last night, in minutes? (number of minutes)</li>
+<li>Have you been to a dental examination or cleaning in the past 12 months? (Yes/No)</li>
+<li>In the past two weeks, how often did you take time to do hobbies or activities that you find relaxing? (Never, Rarely, Frequently, Daily)</li>
+<li>Please rate your agreement with “I am physically active.” (0 = Strongly Disagree {SD} to 0 = Strongly Agree {SA})</li>
+<li>How happy do you feel on a typical day? (0 = Miserable to 100 = Ecstatic)</li>
+<li>Please rate your agreement with “I feel that my stress level severely impacts my daily functioning.” (0 = SD, 100 = SA)</li>
+<li>Please rate your agreement with “I eat in an extremely healthy way, every day.” (0 = SD, 100 = SA)</li>
+<li>Please rate your agreement with “I feel tremendous stress with regard to my classes and program of study.” (0 = SD, 100 = SA)</li>
+<li>Including yourself, how many people live in your household? (count)</li>
+<li>How many pets live in your household? (count)</li>
+<li>Out of the last 30 days, on how many did you feel highly stressed? (count 0-30)</li>
+<li>In the last 7 days, how many hours did you spend on work, class or research? (count of hours)</li>
+<li>In a typical week in October 2020, how many miles did you drive? (count)</li>
+<li>Did you spend most of your childhood inside the US? (yes/no)</li>
+<li>Which of the following best describes the area where you grew up? (urban, suburban, rural)</li>
+<li>Which is your favorite season? (Winter, Summer, Fall, Spring)</li>
+<li>How comfortable are you with using R? (0 = Not comfortable at all, 100 = Extremely comfortable)</li>
+<li>In addition to 431, how many other credit hours are you taking this semester? (count)</li>
+<li>In the past seven days, what is the total amount of time (in minutes) that you spent on your smart phone? (count)</li>
+<li>Consider the place where you have lived for the longest part of your life so far. How many inches of snow fall in a typical winter in that location? (count)</li>
+</ol>
+<p>This page was last updated: 2020-11-06 22:22:20.</p>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

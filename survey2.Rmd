@@ -1,0 +1,153 @@
+---
+title: "Description of Survey Items and Scales"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+The 2020 Class Survey for 431 includes 65 items. 
+
+- For information on taking the survey, [go here](survey1.html) (deadline is 2020-11-11 at 11 PM).
+- For information on getting the data once the survey is complete, [go here](survey3.html).
+
+Survey items include:
+
+- The Perceived Stress Scale (10 items)
+- The Health Information Orientation Scale (8 items)
+- A modified Insomnia Severity Index (7 items)
+- 40 items that are not part of a scale (these were developed by students in previous 431 classes)
+
+Next, we list each of these items, and describe the scoring and grouping of the three scales.
+
+## The Perceived Stress Scale (10 items)
+
+In the past month, how often have you ... 
+
+(available responses are Never, Almost Never, Sometimes, Fairly Often and Very Often)
+
+- **PSS-01**. been upset because of something that happened unexpectedly?
+- **PSS-02**. felt that you were unable to control the important things in your life?
+- **PSS-03**. felt nervous and stressed?
+- **PSS-04**. felt confident about your ability to handle your personal problems?
+- **PSS-05**. felt that things were going your way?
+- **PSS-06**. found that you could not cope with all the things that you had to do?
+- **PSS-07**. been able to control irritations in your life? 
+- **PSS-08**. felt that you were on top of things?
+- **PSS-09**. been angered because of things that happened that were outside of your control?
+- **PSS-10**. felt difficulties were piling up so high that you could not overcome them?
+
+### Scoring for the PSS
+
+Each item on the Perceived Stress Scale is measured on a scale from 0-4. Sum the item scores for a subject to determine their PSS score, between 0 and 40.
+
+- For items PSS-01, -02, -03, -06, -09, and -10, the scale is 0 for Never, 1 for Almost Never, 2 for Sometimes, 3 for Fairly Often and 4 for Very Often
+- For items PSS-04, -05, -07 and -08, the scale is reversed, so 4 for Never, 3 for Almost Never, 2 for Sometimes, 1 for Fairly Often and 0 for Very Often
+
+We will generally treat the PSS score as quantitative, with higher PSS scores indicating higher perceived stress. There are popular cutoffs creating three categories at:
+
+- 0-13 indicating low perceived stress
+- 14-26 indicating moderate perceived stress, and 
+- 27-40 indicating high perceived stress.
+
+## The Health Information Orientation Scale (8 items)
+
+Each of these are answered on a scale of 1 = Strongly Disagree to 5 = Strongly Agree
+
+- **HIOS-1**. I make it a point to read and watch stories about health.
+- **HIOS-2**. I really enjoy learning about health issues.
+- **HIOS-3**. To be and stay healthy it's critical to be informed about health issues. 
+- **HIOS-4**. The amount of health information available today makes it easier for me to take care of my health. 
+- **HIOS-5**. When I take medicine, I try to get as much information as possible about its benefits and side effects. 
+- **HIOS-6**. I need to know about health issues so I can keep myself and my family healthy.
+- **HIOS-7**. Before making a decision about my health, I find out everything I can about this issue.
+- **HIOS-8**. It's important to me to be informed about health issues. 
+
+### Scoring for the HIOS
+
+Each item on the Health Information Orientation Scale is measured on a scale from 1-5. Take the mean of all items to which the subject responds to establish their HIOS score.
+
+We will generally treat the HIOS score as quantitative, with higher HIOS scores indicating a stronger orientation towards gathering health information.
+
+There are popular cutoffs creating five categories at:
+
+- 0 - 1.50 indicating very low health information orientation
+- 1.51 - 2.50 indicating low health information orientation
+- 2.51 - 3.50 indicating moderate health information orientation
+- 3.51 - 4.50 indicating high health information orientation, and
+- 4.51 - 5.00 indicating very high health information orientation.
+
+## modified Insomnia Severity Index (7 items)
+
+responses for items 1-3 are None (0), Mild (1), Moderate (2), Severe (3), Very Severe (4)
+
+- **mISI-1**. In the past two weeks, how much difficulty did you have falling asleep?
+- **mISI-2**. In the past two weeks, how much difficulty did you have staying asleep?
+- **mISI-3**. In the past two weeks, how much difficulty did you have with waking up too early?
+
+responses for item 4 are Very Satisfied (0), Satisfied (1), Neutral (2), Dissatisfied (3), Very Dissatisfied (4)
+
+- **mISI-4**. How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?
+
+responses for items 5-7 are Not at all (0), A Little (1), Somewhat (2), Much (3), Very Much (4)
+
+- **mISI-5**. How NOTICEABLE to others do you think your sleep pattern is in terms of impairing the quality of your life?
+- **mISI-6**. How WORRIED/DISTRESSED are you about your current sleep?
+- **mISI-7**. To what extent do you consider your sleep pattern to INTERFERE with your daily functioning (e.g. daytime fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?
+
+### Scoring for the mISI
+
+Each item involves a choice from five possible responses, scored 0-4. Add the 7 item scores to estimate the index. Higher scores on the index indicate more substantial problems with sleep. There are popular cutoffs creating four categories of sleep problems, which we might interpret as:
+
+- Non-meaningful (or modest) sleep problems: 0 - 7 points
+- Low severity sleep problems: 8 - 14 points
+- Moderate severity sleep problems: 15 - 21 points
+- High severity sleep problems: 22 - 28 points
+
+## 40 "Homegrown" Items That Aren't Part of a Scale
+
+1. Were you born in the United States? (Yes/No)
+2. Is English the language you speak better than any other? (Yes/No)
+3. Do you identify as female? (Yes/No)
+4. Do you wear prescription glasses or contact lenses? (Yes/No)
+5. Before taking 431, had you ever used R before? (Yes/No)
+6. Are you currently married or in a stable domestic relationship? (Yes/No)
+7. Have you smoked 100 cigarettes or more in your entire life? (Yes/No)
+8. In what year were you born? (year)
+9. How would you rate your current health overall? (Excellent / Very Good / Good / Fair / Poor)
+10. For how long, in months, have you lived in Northeast Ohio? (0-?)
+11. What is your height, in inches?
+    - If you are five feet, eight inches tall, please write 68 inches. To convert from centimeters to inches, multiply your height in centimeters by 0.3937, and then round the result to the nearest inch.
+12. What is your weight, in pounds?
+    - To convert from kilograms to pounds, multiply your weight in kilograms by 2.2046, and then round the result to the nearest pound.
+13. What is your pulse rate, in beats per minute?
+    - Please either use a tracking device, or count your pulse for 15 seconds then multiply by 4.
+14. Last week, on how many days did you exercise? (0, 1, 2, 3, 4, 5, 6, 7)
+15. Last night, how many hours of sleep did you get? (number of hours)
+17. In the past month, did you buy most of the groceries you consumed? (Yes/No)
+31. How confident are you in your ability to prepare a full meal? (0 = not confident at all, 100 = extremely confident)
+33. As you were growing up, what percentage of your meals were home-cooked? (0-100)
+34. In the last 30 days, about how many times did someone in your household shop for groceries? (count)
+37. Last week, how many meals did you eat that contained vegetables? (0-21)
+47. How long did it take you to fall asleep last night, in minutes? (number of minutes)
+48. Have you been to a dental examination or cleaning in the past 12 months? (Yes/No)
+52. In the past two weeks, how often did you take time to do hobbies or activities that you find relaxing? (Never, Rarely, Frequently, Daily)
+56. Please rate your agreement with "I am physically active." (0 = Strongly Disagree {SD} to 0 = Strongly Agree {SA})
+57. How happy do you feel on a typical day? (0 = Miserable to 100 = Ecstatic)
+58. Please rate your agreement with "I feel that my stress level severely impacts my daily functioning." (0 = SD, 100 = SA)
+59. Please rate your agreement with "I eat in an extremely healthy way, every day." (0 = SD, 100 = SA)
+61. Please rate your agreement with "I feel tremendous stress with regard to my classes and program of study." (0 = SD, 100 = SA)
+62. Including yourself, how many people live in your household? (count)
+63. How many pets live in your household? (count)
+64. Out of the last 30 days, on how many did you feel highly stressed? (count 0-30)
+65. In the last 7 days, how many hours did you spend on work, class or research? (count of hours)
+70. In a typical week in October 2020, how many miles did you drive? (count)
+71. Did you spend most of your childhood inside the US? (yes/no)
+81. Which of the following best describes the area where you grew up? (urban, suburban, rural)
+84. Which is your favorite season? (Winter, Summer, Fall, Spring)
+85. How comfortable are you with using R? (0 = Not comfortable at all, 100 = Extremely comfortable)
+86. In addition to 431, how many other credit hours are you taking this semester? (count)
+88. In the past seven days, what is the total amount of time (in minutes) that you spent on your smart phone? (count)
+89. Consider the place where you have lived for the longest part of your life so far. How many inches of snow fall in a typical winter in that location? (count)
+
+This page was last updated: `r Sys.time()`.
