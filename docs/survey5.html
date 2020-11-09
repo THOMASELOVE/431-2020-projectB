@@ -381,9 +381,10 @@ $(document).ready(function () {
 </ul></li>
 <li>Cleaning the Data
 <ul>
-<li>Note that it’s only necessary to clean the variables you will actually use in your four analyses below. Feel free to select only those variables here to create your clean tibble.</li>
-<li>Do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> after merging, but I wouldn’t otherwise change the variable names.</li>
+<li>Note that it’s only necessary to clean the variables you will actually use in your four analyses below. Select only those variables (including the subject identifier) here when you create your analytic tibble.</li>
+<li>Do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> either before or after merging, but I wouldn’t otherwise change the variable names if you’re not changing the meaning of the variables.</li>
 <li>If you create a new categorical variable from one of the existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.</li>
+<li>This section should conclude with a codebook listing all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses.</li>
 </ul></li>
 </ol>
 <p>and any four of the following six sections…</p>
@@ -407,7 +408,8 @@ $(document).ready(function () {
 <li>Describing The Data
 <ul>
 <li>This should start with specifications of what each of the variables you are studying in this analysis actually mean.</li>
-<li>Then provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.</li>
+<li>Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don’t repeat what you’ve already done.</li>
+<li>Provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.</li>
 </ul></li>
 <li>Main Analysis
 <ul>
@@ -420,7 +422,7 @@ $(document).ready(function () {
 <li>If you can see a logical next step for the analysis of the question you asked, specify it. Also, if you specified a pre-existing belief about what would happen, reflect on that in light of the data.</li>
 </ul></li>
 </ol>
-<p>This page was last updated: 2020-11-09 08:45:34.</p>
+<p>This page was last updated: 2020-11-09 15:25:18.</p>
 </div>
 </div>
 

@@ -28,9 +28,10 @@ All of your work should be done in a fresh R project in a clean directory on you
 2. Merging the Data
     - Be sure to demonstrate that the final tibble you wind up with after merging is correct, with 73 variables and the appropriate number of rows.
 3. Cleaning the Data 
-    - Note that it's only necessary to clean the variables you will actually use in your four analyses below. Feel free to select only those variables here to create your clean tibble.
-    - Do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names.
+    - Note that it's only necessary to clean the variables you will actually use in your four analyses below. Select only those variables (including the subject identifier) here when you create your analytic tibble.
+    - Do all of your cleaning after the merge. I also suggest applying **clean_names** either before or after merging, but I wouldn't otherwise change the variable names if you're not changing the meaning of the variables.
     - If you create a new categorical variable from one of the existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.
+    - This section should conclude with a codebook listing all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses. 
 
 and any four of the following six sections...
 
@@ -49,7 +50,8 @@ and any four of the following six sections...
     - If you have a pre-existing belief about what will happen, before you look at the data, please feel encouraged to include a statement about that belief before specifying your question.
 2. Describing The Data 
     - This should start with specifications of what each of the variables you are studying in this analysis actually mean.
-    - Then provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.
+    - Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don't repeat what you've already done.
+    - Provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.
 3. Main Analysis
     - Show your work, and comment on whatever decisions you make.
     - Be sure to present and justify the assumptions you are making.
