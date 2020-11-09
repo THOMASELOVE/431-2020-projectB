@@ -46,8 +46,9 @@ All of your work should be done in a fresh R project in a clean directory on you
 8. The Big Model
     - Fit a linear regression model including all of your candidate predictors for your (possibly transformed) outcome within your training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
 9. The Smaller Model
-    - Fit a linear regression model using a subset of your predictors that is interesting (you can use an automated approach to select your subset, if you like), again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
-    - Your subset must include at least the key predictor.
+    - Fit a linear regression model using a subset of your predictors that is interesting, again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
+    - Your subset must include at least the key predictor, and a perfectly reasonable strategy for this project is simply to compare the "naive" model with the key predictor alone to the full model with all predictors you have identified.
+    - If you prefer to use another subset of predictors from your big model as your smaller model, that's fine, too. If you'd prefer to use an automated or semi-automated strategy for identifying your subset of predictors from the big model, that's also fine.
 10. In-Sample Comparison
     - It would be helpful to present three subsections here, entitled **Quality of Fit**, **Assessing Assumptions** and **Comparing the Models**
     - In **Quality of Fit**, use **glance** for each of the models you fit (Big and Smaller) to summarize the quality of fit (focusing on $R^2$, adjusted $R^2$, AIC and BIC) within the training sample.
