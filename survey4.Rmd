@@ -22,7 +22,8 @@ First, you will ingest the data that Dr. Love will provide to you, merging the 2
     - Remember that some more information on [merging is available here](survey3.html).
     - Remember also to check closely for missing data.
 - You can use the data as they were collected (quantitative, binary or multi-categorical), but you can also create categorical variables from the quantitative variables provided, should that be of interest in one or more of your analyses. 
-    - Should you decide to create such a categorical variable, be sure to describe that process carefully, and demonstrate that each level of your created categorical variable contains at least 10 observations.
+    - Should you decide a categorical variable from a quantitative one, be sure to describe that process carefully, and demonstrate that each level of your created categorical variable contains at least 10 observations.
+    - For variables that are already categorical, we prefer that each level have at least 10 observations, but it will be OK if you have at least 5 responses at each level, and cannot collapse further easily.
 
 ## Analyses You'll Do
 
