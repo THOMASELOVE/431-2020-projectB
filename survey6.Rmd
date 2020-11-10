@@ -6,18 +6,47 @@ title: "Study 1 Demonstration Materials"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-Links will be provided below to R Markdown and HTML versions of Sample Study 1 report materials as they become available.
+The Study 1 Demonstration Materials are now available through the links below.
 
 Remember that a general outline and set of instructions for the Study 1 report [is available here](survey5.html). A demonstration of an appropriate analysis for each of the required Study 1 analyses will be provided, as follows.
 
-- [Outline](survey5.html) of the Study 1 Report
-- Sample Analysis A: Compare two means/medians using paired samples
-- Sample Analysis B: Compare two means/medians using independent samples
-- Sample Analysis C: Compare 3-6 means/medians using independent samples
-- Sample Analysis D: Create and analyze a $2 \times 2$ table
-- Sample Analysis E: Create and analyze a $J \times K$ table, where $2 \leq J \leq 5$ and $3 \leq K \leq 5$
-- Sample Analysis F: Create and analyze a $2 \times 2 \times M$ table, where $2 \leq M \leq 5$.
+## The Study 1 Demonstration Project
 
-These materials will appear before the Thanksgiving Break.
+I have demonstrated many of the elements you would need to complete, including:
+
+- data ingest
+- merging
+- cleaning the data, as well as
+- Analysis A: Compare two means/medians using paired samples
+- Analysis B: Compare two means/medians using independent samples
+- Analysis C: Compare 3-6 means/medians using independent samples
+- Analysis D: Create and analyze a $2 \times 2$ table
+- Analysis E: Create and analyze a $J \times K$ table, where $2 \leq J \leq 5$ and $3 \leq K \leq 5$
+- Analysis F: Create and analyze a $2 \times 2 \times M$ table, where $2 \leq M \leq 5$.
+
+for a sample of 53 observations from a 2015 class survey of 431 students and TAs from that year.
+
+## The Files
+
+- The R Markdown file [can be downloaded here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/431-projectB-study1-demo.Rmd).
+- The HTML result [can be viewed here](https://rpubs.com/TELOVE/projB-study1-demo), and [can be downloaded here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/431-projectB-study1-demo.html).
+
+The raw data files for the Study 1 Demonstration Project are described in the R Markdown and HTML files above and are found on [the 431-data website](https://github.com/THOMASELOVE/431-data). They are named:
+
+- projectB-study1-demo-survey-2015a.xlsx (first 20 observations, all 21 columns)
+- projectB-study1-demo-survey-2015b.csv (remaining 33 observations, some of the 21 columns)
+- projectB-study1-demo-survey-2015c.csv (remaining 33 observations, rest of the 21 columns)
+
+The final data set after merging for the Study 1 Demonstration Project includes 53 observations on 21 columns. The subjects are identified with a code called `s_id` in each of the raw data files.
+
+## Caveats
+
+1. The demonstration project does not precisely follow the requirements from Study 1 for the Research Question and Conclusions sections, because that is a big part of your job. 
+
+2. In the demonstration project, I produce all 6 analyses (you will do only 4) and I also run many different possible analyses in each case, when you will instead select one. For instance, in comparing paired samples, the demonstration shows code for confidence intervals based on the t distribution, the bootstrap and the Wilcoxon signed rank approach, while your Project B Study 1 will include just one of these, should you choose to do that analysis. 
+
+3. Outside of those caveats, these demonstrations are meant to be accurate and reflect the level of detail I'm looking for, although it is certainly possible to expand on these demonstrations in your work, if that seems helpful. I believe the demonstration project documents to be largely accurate, but many eyes will find some issues, eventually. 
+
+If people find corrections and would be good enough to post them to Piazza (under the corrections and projectB folders, please) I will attempt to reflect those edits in revisions. If I do something in the demonstration project that appears to be in conflict with the instructions for Study 1, then (a) please let me know, and (b) treat the Study 1 instructions as your guidepost in completing your work.
 
 This page was last updated: `r Sys.time()`.
