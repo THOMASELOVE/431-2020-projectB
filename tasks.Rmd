@@ -30,14 +30,24 @@ Your Study 2 Report is to be submitted to Canvas by 2020-12-10 at Noon.
 
 # Oral Presentation of Results
 
-Dr. Love will pose a series of questions about these Studies right after Thanksgiving, and you will respond to them in December through a short oral presentation.
-    1. Some project groups will do a pre-recorded video presentation.
-    2. The remaining project groups will have a live Zoom meeting with Dr. Love.
+On 2020-12-01, Dr. Love will pose a series of questions about your two Studies, and you will respond to those questions through a short oral presentation.
 
-Further details on the presentations, including the questions you will need to address, will be communicated to you by 2020-11-30.
+1. A substantial majority of the project groups will prepare a pre-recorded video presentation to respond to Dr. Love's questions, and that, too, will be due on 2020-12-10 at noon.
+
+2. A few (12-15) of the project groups will instead meet through Zoom with Dr. Love to have a 15-20 minute conversation about their Project B on either 2020-12-09, 2020-12-10, or 2020-12-11.
+    - Students in these groups will be identified from among those students who will be in the Eastern time zone in North America on the dates in question, and whose project or project members fit into at least one of the following categories:
+        - undergraduate students,
+        - candidates for the MS in Health Care Analytics within the PQHS department, 
+        - candidates for the PhD within the PQHS department, 
+        - struggled with Project A, 
+        - are using, in Study 2, a data set in which Dr. Love has a special interest
+    - Not all students in those situations will meet with Dr. Love. 
+    - Details on who will meet will be provided on 2020-12-01.
+
+Further details on the presentations, including the questions you will need to address, will be communicated to you on 2020-12-01.
 
 # Self-Evaluation for Project B
 
-The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-11-30. It will be due at noon on 2020-12-10.
+The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-12-01. It will be due at noon on 2020-12-10.
 
 This page was last updated: `r Sys.time()`.

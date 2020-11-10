@@ -23,10 +23,10 @@ You will complete two Google Forms in November...
 The bulk of the work, though, is due on 2020-12-10 at noon.
 
 - You will complete two studies, building a report using R Markdown for each, and those reports will be due on 2020-12-10 at noon.
-- Dr. Love will pose a series of questions about these Studies right after Thanksgiving, and you will respond to them in December through a short oral presentation.
-    1. Some project groups will do a pre-recorded video presentation.
-    2. The remaining project groups will have a live Zoom meeting with Dr. Love.
-- Finally, you'll complete a short Google Form at the end of the project as a self-evaluation. It'll take about 10 minutes, much like the one you did for Project A. It will be due with the other project materials at noon on 2020-12-10.
+- On 2020-12-01, Dr. Love will pose a series of questions about your two Studies, and you will respond to those questions through a short **oral presentation**.
+    1. A substantial majority of the project groups will prepare a pre-recorded video presentation to respond to Dr. Love's questions, and that, too, will be due on 2020-12-10 at noon.
+    2. A few (12-15) of the project groups will instead meet through Zoom with Dr. Love to have a 15-20 minute conversation about their Project B on either 2020-12-09, 2020-12-10, or 2020-12-11.
+- You will also complete a **Google Form Self-Evaluation**, as you did in Project A, also due 2020-12-10 at Noon. This, too, will be available on 2020-12-01.
 
 #### Partnerships?
 
@@ -43,7 +43,7 @@ You can work alone, or with one other person on this project. If you work as a p
     - You can do all six analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report.
     - All of the material you need (from a statistical perspective) to do these analyses was covered in Classes 1-20.
 - The **Study 1: Class Survey** [section](survey1.html) of this website includes complete Study 1 instructions.
-    - Study 1 Demonstration materials that may help you build your report will appear before the Thanksgiving break. 
+    - This includes a [Study 1 Demonstration Project](survey6.html) (posted 2020-11-09) that should help you build your report.
 
 # Study 2
 
@@ -60,8 +60,8 @@ You can work alone, or with one other person on this project. If you work as a p
 
 Project B will be graded by Dr. Love on a scale from 0-100.
 
-- Each study report (Study 1 and Study 2) is worth 30 points.
-- The project presentation is also worth 30 points.
+- The combined study report (Study 1 and Study 2) is worth 50 points.
+- The oral presentation in reaction to the questions Dr. Love will pose on 2020-12-01 is worth 40 points.
 - The self-evaluation is worth 10 points.
 - Late work on Project B will be severely penalized.
 
