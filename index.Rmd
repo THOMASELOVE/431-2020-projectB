@@ -17,7 +17,7 @@ knitr::opts_chunk$set(comment = NA)
 
 You will complete two Google Forms in November...
 
-- The Class Survey (used for Study 1 data): [details here](survey1.html), due 2020-11-11 at 11 PM.
+- The Class Survey (used for Study 1 data): [details here](survey1.html), due 2020-11-11 at 11 PM. (NOTE: This is now complete, and everyone did it successfully. Thanks!)
 - The Study 2 Data Plan: [details here](your5.html), due Thursday 2020-11-19 at Noon. This form also gives you the opportunity to tell me whether you are working with a partner.
 
 The bulk of the work, though, is due on 2020-12-10 at noon.
@@ -37,7 +37,7 @@ You can work alone, or with one other person on this project. If you work as a p
 - Study 1 is about making descriptive and exploratory comparisons and summaries of data. It's not (really) about building sophisticated statistical models.
 - Study 1 involves taking a Class Survey of 65 items. The same survey was also taken by 67 students and TAs involved with 431 in Fall 2019.
     - You will take the survey by 2020-11-11 at 11 PM, and you'll find it at http://bit.ly/431-projectB-survey.
-- After all students this year complete the survey, Dr. Love will then create data describing the results from 2019 and 2020 and share them with you. 
+- After all students this year completed the survey, Dr. Love created data describing the results from 2019 and 2020 and shared them with you. 
 - Every project group will thus start Study 1 with the same original data set of survey results, but you will each look at different survey items and identify different analytic questions.
 - You will ingest, merge and clean the data in R, then select variables to complete any four out of a set of six potential analyses, described in these instructions. 
     - You can do all six analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report.

@@ -9,6 +9,9 @@ knitr::opts_chunk$set(comment = NA)
 Visit http://bit.ly/431-projectB-survey to take the survey. This will take you to a Google Form, and you'll need to be logged into Google via CWRU to take the survey.
 
 - **Deadline** Please [complete the survey](http://bit.ly/431-projectB-survey) by 11 PM on Wednesday 2020-11-11.
+- **Note** The survey is now complete, for 2020. [Go here](survey3.html) to obtain the data.
+
+## No longer relevant information
 
 There are [65 items, as listed here](survey2.html), so this will take a little while to complete, but remember that your fellow students need data. While none of the items (except your name, at the bottom of this page) are marked as required so that you can skip around if you like, we really hope you will answer all 65 items.
 

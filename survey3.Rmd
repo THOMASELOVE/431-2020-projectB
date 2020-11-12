@@ -6,20 +6,29 @@ title: "Getting the Survey Data"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-The data will be provided in two files, one describing data from the 2019 administration of the survey, and another describing data from the 2020 administration.
+The data are provided in three files, one describing data from the 2019 administration of the survey, and another two to describe data from the 2020 administration.
 
 - The 2019 data are available now, as an Excel (.xlsx) file, which can be found on our Shared Google Drive in the [Project B folder](https://drive.google.com/drive/folders/1J-ydi6dEFNd_39ddbKsiyyssNqqY5y56?usp=sharing). 
-    - The posted file is named **431_projectB_survey_data_2019.xlsx**. 
+    - The posted file is named **431_projectB_survey_data_2019.xlsx**, and it contains 67 observations on a total of 73 variables. 
     - We encourage the use of the **read_excel** function from the **readxl** package to ingest the data into R.
-- The 2020 data will be posted to that same folder on our Shared Drive after the 2020 administration of the survey is complete.
+- The 2020 data are available now, in two comma-separated version (.csv) files, which can also be found on our Shared Google Drive in the [Project B folder](https://drive.google.com/drive/folders/1J-ydi6dEFNd_39ddbKsiyyssNqqY5y56?usp=sharing).
+    - The first file is named **431_projectB_survey_data_2020a.csv** and it contains 80 observations on 32 variables.
+    - The second file is named **431_projectB_survey_data_2020b.csv** and it contains 80 observations on 42 variables, repeating the "SubjectID" variable that was also in the **2020a** file.
 
 You will need to merge the 2019 and 2020 data sets, within R, to do the project work. 
 
 ## How do I merge the data?
 
-Suppose you have imported the data into R and created two tibbles, each of which contain one of the data sets Dr. Love has provided. 
+Suppose you have imported the data into R and created three tibbles, each of which contain one of the data sets Dr. Love has provided. 
 
-- Verify that each tibble contains exactly the same variable names in the same order.
+First, you'll need to combine the 2020 data from the two tibbles you create for them. The **2020a** file contains the first 32 variables, and the **2020b** file contains the remaining ones. Faced with a similar problem in the [Study 1 Demonstration](survey6.html), I was able to join the columns from the two tibbles to obtain a new tibble, using the `inner_join()` function from the `dplyr` package.
+
+- This isn't the only option, but it's a sensible choice.
+- You must combine the files using R, and R alone.
+
+Next, you'll need to combine the 2019 and the 2020 data (now that all the 2020 data are together in one tibble) to create your final merged tibble. 
+
+- Verify that each year's tibble contains exactly the same variable names in the same order.
     - You can check this with the **compare_df_cols** function from the **janitor** package.
 - Verify that each subject in each tibble is identified by a unique subject ID code.
     - You can check this with the **n_distinct** function to see if the number of unique (distinct) subject IDs is equal to the number of rows, obtained with **n_row** for each tibble.
@@ -30,7 +39,7 @@ Then, to create a merged version of the data including all subjects from both ti
 - the **union** function ([as described here](https://dplyr.tidyverse.org/reference/setops.html)), or
 - the **full_join** function ([as described here](https://dplyr.tidyverse.org/reference/join.html))
 
-each of which is part of the `dplyr` package, which is part of the core `tidyverse`. There is no reason to use more than one of these approaches. Simply pick one that works for you, and use that. 
+each of which is part of the `dplyr` package, which is part of the core `tidyverse`. There is no reason to use more than one of these approaches. Simply pick one that works for you, and use that, as I did in the [Study 1 Demonstration Project](survey6.html), for instance.
 
 To learn more about merging in R, I suggest:
 
@@ -38,10 +47,10 @@ To learn more about merging in R, I suggest:
 2. The folks at STAT545 have a great "[cheat sheet](https://stat545.com/join-cheatsheet.html)" on this as well, which has a more expansive description of some of the ideas.
 3. The material on [Relational Data in R for Data Science](https://r4ds.had.co.nz/relational-data.html) should also give you a useful introduction to the ideas and code involved.
 
-
 After you create the merged tibble, be **certain** that you haven't introduced any problems. 
 
-- Your resulting tibble should describe 73 variables, and the correct number of subjects, which is just the total for the 2019 data (67 subjects) and the 2020 data (as yet unknown, but likely to be around 80 subjects.)
+- Your resulting tibble should describe 73 variables, and the correct number of subjects (147), which is just the total for the 2019 data (67 subjects) and the 2020 data (80 subjects)
+- Note well that when you have successfully merged the data, you should have a tibble with 147 rows, 73 columns, and **three** missing values.
 
 # What do the data sets look like?
 
@@ -49,11 +58,11 @@ Dr. Love placed a Google Sheet called "**Fall 2020 Project B Study 1 Class Surve
 
 That sheet contains the following tabs:
 
-- **Data Elements** a list of all 73 variables that will be provided to you, containing their names, the description, the type of variable, and the possible responses.
+- **Data Elements** a list of all 73 variables that have been provided to you, containing their names, the description, the type of variable, and the possible responses.
 - Descriptions of the scoring and grouping rules for each of the three scales
     - **PSS**: Perceived Stress Scale
     - **HIOS**: Health Information Orientation Scale
     - **mISI**: Modified Insomnia Severity Index
-- **Hmisc::describe** results from the 2019 data across all 73 variables, so you can check to see if your results match those of Dr. Love for that subset of the full data.
+- **Hmisc::describe** results from the **2019 and 2020 data** (combined) across all 73 variables and all 147 subjects, so you can check to see if your results match those of Dr. Love for the data after merging.
 
 This page was last updated: `r Sys.time()`.

@@ -6,7 +6,7 @@ title: "Required Study 1 Analyses"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-Once the data are made available to you, you will build a [final report for Study 1](survey5.html).
+Now that the data are available to you, you can build a [final report for Study 1](survey5.html).
 
 In your four analyses (chosen from a set of six possibilities), you will be doing:
 
