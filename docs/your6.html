@@ -357,12 +357,12 @@ $(document).ready(function () {
 <p>Produce a beautiful HTML report. It should include:</p>
 <ul>
 <li>a meaningful title: do not use the terms “Project” or “Project B” or “431” or “Study 2” in your title.</li>
-<li>an easy-to-understand and easy-to-navigate table of contents</li>
-<li>numbered sections and sub-sections</li>
+<li>an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings provided below</li>
+<li>numbered sections and sub-sections (use <strong>number_sections: TRUE</strong> in your YAML)</li>
 <li>the full names of the author(s), properly formatted</li>
 <li>the date, properly formatted using <strong>r Sys.Date()</strong> for the Date in your YAML)</li>
 <li>no hashtags in the R results (use <strong>knitr::opts_chunk$set(comment = NA)</strong> to do this)</li>
-<li>no warnings, and do what you can to hide unhelpful messages</li>
+<li>no warnings, and do what you can to hide unhelpful messages with <code>message = FALSE</code> as needed</li>
 <li>no hidden code chunks</li>
 <li>code-folding set to show (use <strong>code_folding: show</strong> in your YAML)</li>
 </ul>
@@ -380,6 +380,12 @@ $(document).ready(function () {
 <li>Note that it’s only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.</li>
 <li>If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn’t do that except in dire circumstances.</li>
 <li>If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> after merging, but I wouldn’t otherwise change the variable names.</li>
+<li>The last subsection of Section 3 should be a <strong>Codebook</strong> which lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables.
+<ul>
+<li>Each variable should have its name (and its original name if you’ve changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical.</li>
+<li>For categorical variables, list the levels in the codebook.</li>
+<li>Be sure to indicate which variable is your outcome by including <strong>outcome</strong> in the description of that variable in your codebook.</li>
+</ul></li>
 </ul></li>
 <li>Your Question
 <ul>
@@ -453,7 +459,7 @@ $(document).ready(function () {
 </ul></li>
 </ul></li>
 </ol>
-<p>This page was last updated: 2020-11-16 08:50:23.</p>
+<p>This page was last updated: 2020-11-16 14:15:32.</p>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 

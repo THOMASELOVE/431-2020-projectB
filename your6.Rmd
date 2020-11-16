@@ -9,12 +9,12 @@ knitr::opts_chunk$set(comment = NA)
 Produce a beautiful HTML report. It should include:
 
 - a meaningful title: do not use the terms "Project" or "Project B" or "431" or "Study 2" in your title.
-- an easy-to-understand and easy-to-navigate table of contents
-- numbered sections and sub-sections
+- an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings provided below
+- numbered sections and sub-sections (use **number_sections: TRUE** in your YAML)
 - the full names of the author(s), properly formatted
 - the date, properly formatted using **r Sys.Date()** for the Date in your YAML)
 - no hashtags in the R results (use **knitr::opts_chunk$set(comment = NA)** to do this)
-- no warnings, and do what you can to hide unhelpful messages
+- no warnings, and do what you can to hide unhelpful messages with `message = FALSE` as needed
 - no hidden code chunks
 - code-folding set to show (use **code_folding: show** in your YAML)
 
@@ -29,6 +29,10 @@ All of your work should be done in a fresh R project in a clean directory on you
     - Note that it's only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.
     - If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn't do that except in dire circumstances.
     - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names.
+    - The last subsection of Section 3 should be a **Codebook** which lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables. 
+        - Each variable should have its name (and its original name if you've changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical. 
+        - For categorical variables, list the levels in the codebook.
+        - Be sure to indicate which variable is your outcome by including **outcome** in the description of that variable in your codebook.
 4. Your Question
     - Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.
 5. Your Variables

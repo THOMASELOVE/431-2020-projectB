@@ -9,12 +9,12 @@ knitr::opts_chunk$set(comment = NA)
 Produce a beautiful HTML report. It should include:
 
 - a meaningful title: if you need a suggestion, use "Exploring the 431 Class Survey" rather than something like "Study 1" or "Project B Study 1".
-- an easy-to-understand and easy-to-navigate table of contents
-- numbered sections and sub-sections
+- an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings provided below
+- numbered sections and sub-sections (use **number_sections: TRUE** in your YAML)
 - the full names of the author(s), properly formatted
 - the date, properly formatted using **r Sys.Date()** for the Date in your YAML)
 - no hashtags in the R results (use **knitr::opts_chunk$set(comment = NA)** to do this.)
-- no warnings, and do what you can to hide unhelpful messages
+- no warnings, and do what you can to hide unhelpful messages with `message = FALSE` as needed
 - no hidden code chunks
 - code-folding set to show (use **code_folding: show** in your YAML)
 
@@ -29,11 +29,13 @@ All of your work should be done in a fresh R project in a clean directory on you
     - Be sure to demonstrate that the final tibble you wind up with after merging is correct, with 73 variables and the appropriate number of rows.
 3. Cleaning the Data 
     - Note that it's only necessary to clean the variables you will actually use in your four analyses below. Select only those variables (including the subject identifier) here when you create your analytic tibble.
-    - Do all of your cleaning after the merge. I also suggest applying **clean_names** either before or after merging, but I wouldn't otherwise change the variable names if you're not changing the meaning of the variables.
+    - Do all of your cleaning after the merge. I also suggest applying **clean_names** either before or after merging, but I wouldn't otherwise change the variable names if you're not changing the meaning of the variables. If you want to change the names, you can, but then you must indicate that in your codebook, and do the renaming before you show the codebook.
     - If you create a new categorical variable from one of the existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.
-    - This section should conclude with a codebook listing all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses. 
+    - The Cleaning The Data section (section 3) should **conclude** with a subsection called **Codebook** where you will list all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses. 
+        - If you decide to rename any of the variables from the names provided with the raw data, you should specify your new name and the original name in your codebook. 
+        - Your codebook should also describe each of the variables you are using and specify whether they are quantitative, binary or multi-categorical.
 
-and any four of the following six sections...
+Those first three sections should then be followed by any four of the following six sections...
 
 4. Analysis A: Comparing 2 Means with Paired Samples
 5. Analysis B: Comparing 2 Means with Independent Samples
@@ -50,7 +52,7 @@ and any four of the following six sections...
     - If you have a pre-existing belief about what will happen, before you look at the data, please feel encouraged to include a statement about that belief before specifying your question.
 2. Describing The Data 
     - This should start with specifications of what each of the variables you are studying in this analysis actually mean.
-    - Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don't repeat what you've already done.
+    - Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don't repeat what you've already done. Be sure that the Codebook you provided back then describes all variables you are using in your analyses here.
     - Provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.
 3. Main Analysis
     - Show your work, and comment on whatever decisions you make.

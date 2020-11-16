@@ -357,12 +357,12 @@ $(document).ready(function () {
 <p>Produce a beautiful HTML report. It should include:</p>
 <ul>
 <li>a meaningful title: if you need a suggestion, use “Exploring the 431 Class Survey” rather than something like “Study 1” or “Project B Study 1”.</li>
-<li>an easy-to-understand and easy-to-navigate table of contents</li>
-<li>numbered sections and sub-sections</li>
+<li>an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings provided below</li>
+<li>numbered sections and sub-sections (use <strong>number_sections: TRUE</strong> in your YAML)</li>
 <li>the full names of the author(s), properly formatted</li>
 <li>the date, properly formatted using <strong>r Sys.Date()</strong> for the Date in your YAML)</li>
 <li>no hashtags in the R results (use <strong>knitr::opts_chunk$set(comment = NA)</strong> to do this.)</li>
-<li>no warnings, and do what you can to hide unhelpful messages</li>
+<li>no warnings, and do what you can to hide unhelpful messages with <code>message = FALSE</code> as needed</li>
 <li>no hidden code chunks</li>
 <li>code-folding set to show (use <strong>code_folding: show</strong> in your YAML)</li>
 </ul>
@@ -382,12 +382,16 @@ $(document).ready(function () {
 <li>Cleaning the Data
 <ul>
 <li>Note that it’s only necessary to clean the variables you will actually use in your four analyses below. Select only those variables (including the subject identifier) here when you create your analytic tibble.</li>
-<li>Do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> either before or after merging, but I wouldn’t otherwise change the variable names if you’re not changing the meaning of the variables.</li>
+<li>Do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> either before or after merging, but I wouldn’t otherwise change the variable names if you’re not changing the meaning of the variables. If you want to change the names, you can, but then you must indicate that in your codebook, and do the renaming before you show the codebook.</li>
 <li>If you create a new categorical variable from one of the existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.</li>
-<li>This section should conclude with a codebook listing all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses.</li>
+<li>The Cleaning The Data section (section 3) should <strong>conclude</strong> with a subsection called <strong>Codebook</strong> where you will list all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses.
+<ul>
+<li>If you decide to rename any of the variables from the names provided with the raw data, you should specify your new name and the original name in your codebook.</li>
+<li>Your codebook should also describe each of the variables you are using and specify whether they are quantitative, binary or multi-categorical.</li>
+</ul></li>
 </ul></li>
 </ol>
-<p>and any four of the following six sections…</p>
+<p>Those first three sections should then be followed by any four of the following six sections…</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Analysis A: Comparing 2 Means with Paired Samples</li>
 <li>Analysis B: Comparing 2 Means with Independent Samples</li>
@@ -408,7 +412,7 @@ $(document).ready(function () {
 <li>Describing The Data
 <ul>
 <li>This should start with specifications of what each of the variables you are studying in this analysis actually mean.</li>
-<li>Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don’t repeat what you’ve already done.</li>
+<li>Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in the Cleaning the Data section. You can refer back to that section if you like, but don’t repeat what you’ve already done. Be sure that the Codebook you provided back then describes all variables you are using in your analyses here.</li>
 <li>Provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.</li>
 </ul></li>
 <li>Main Analysis
@@ -422,7 +426,7 @@ $(document).ready(function () {
 <li>If you can see a logical next step for the analysis of the question you asked, specify it. Also, if you specified a pre-existing belief about what would happen, reflect on that in light of the data.</li>
 </ul></li>
 </ol>
-<p>This page was last updated: 2020-11-16 08:49:53.</p>
+<p>This page was last updated: 2020-11-16 14:15:19.</p>
 </div>
 </div>
 
