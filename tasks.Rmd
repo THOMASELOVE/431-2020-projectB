@@ -11,6 +11,7 @@ knitr::opts_chunk$set(comment = NA)
 1. Fill out [the Class Survey](survey1.html) by visiting http://bit.ly/431-projectB-survey. This is due on Wednesday 2020-11-11 at 9 PM.
     - Everyone has done this on time.
 2. Fill out [the Study 2 Data Plan](your5.html) by visiting http://bit.ly/431-projectB-data-plan. This is due on Thursday 2020-11-19 at Noon.
+    - Status Report on Approval of Data Plans [is available here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/study2-dataplan-status.md)
 
 # Submitting Your Study 1 Report
 

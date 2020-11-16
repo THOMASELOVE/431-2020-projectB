@@ -9,6 +9,7 @@ knitr::opts_chunk$set(comment = NA)
 Visit http://bit.ly/431-projectB-data-plan to complete a form describing your data plan for Study 2. You'll need to be logged into Google via CWRU to see and complete the form. If you are working with a partner, you each need to submit the Data Plan, and please submit the same responses to the questions about the data you're using.
 
 - **Deadline** Please [complete the data plan](http://bit.ly/431-projectB-data-plan) as soon as possible, but definitely by Noon on Thursday 2020-11-19.
+- **Status Report** Approval Status for these Data Plans [is summarized here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/study2-dataplan-status.md).
 
 The data plan form asks the following questions:
 
