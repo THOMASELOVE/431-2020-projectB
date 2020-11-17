@@ -31,7 +31,7 @@ All of your work should be done in a fresh R project in a clean directory on you
     - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names.
     - The last subsection of Section 3 should be a **Codebook** which lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables. 
         - Each variable should have its name (and its original name if you've changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical. 
-        - For categorical variables, list the levels in the codebook.
+        - For categorical variables, list the levels in the codebook. If any of those levels are "don't know" or "did not respond" or "unknown" I would drop those cases in the cleaning process, treating those as missing values.
         - Be sure to indicate which variable is your outcome by including **outcome** in the description of that variable in your codebook.
 4. Your Question
     - Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.
