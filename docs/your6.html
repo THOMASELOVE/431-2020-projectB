@@ -379,23 +379,23 @@ $(document).ready(function () {
 <ul>
 <li>Note that it’s only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.</li>
 <li>If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn’t do that except in dire circumstances.</li>
-<li>If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> after merging, but I wouldn’t otherwise change the variable names.</li>
-<li>The last subsection of Section 3 should be a <strong>Codebook</strong> which lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables.
-<ul>
-<li>Each variable should have its name (and its original name if you’ve changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical.</li>
-<li>For categorical variables, list the levels in the codebook. If any of those levels are “don’t know” or “did not respond” or “unknown” I would drop those cases in the cleaning process, treating those as missing values.</li>
-<li>Be sure to indicate which variable is your outcome by including <strong>outcome</strong> in the description of that variable in your codebook.</li>
+<li>If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying <strong>clean_names</strong> after merging, but I wouldn’t otherwise change the variable names. If you decide to change the names, that’s OK, but then specify what their original names were in the codebook below.</li>
+<li>If any of the variables have responses like “don’t know” or “did not respond” or “unknown” I would drop those cases in the cleaning process, treating those as missing values.</li>
 </ul></li>
-</ul></li>
-<li>Your Question
+<li>My Research Question
 <ul>
 <li>Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.</li>
 </ul></li>
-<li>Your Variables
+<li>My Final Variables
 <ul>
-<li>This section should have three subsections</li>
-<li>Create a subsection called Codebook first. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don’t make me guess.</li>
-<li>Then create a subsection called Numerical Data Description, and present the results of <strong>Hmisc::describe</strong> or <strong>mosaic::favstats</strong> or something similar for all variables of interest (e.g. leave out the subject identifier)</li>
+<li>Subsection 5.1 should be called Codebook. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don’t make me guess.
+<ul>
+<li>The Codebook lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables.</li>
+<li>Each variable should have its name (and its original name if you’ve changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical.</li>
+<li>For categorical variables, list the levels in the codebook.</li>
+<li>Be sure to indicate which variable is your outcome by including <strong>outcome</strong> in the description of that variable in your codebook.</li>
+</ul></li>
+<li>Subsection 5.2 should be called Numerical Data Description, and should present the results of <strong>Hmisc::describe</strong> or <strong>mosaic::favstats</strong> or something similar for all variables of interest (e.g. leave out the subject identifier)</li>
 </ul></li>
 <li>Partitioning the Data
 <ul>
@@ -459,7 +459,7 @@ $(document).ready(function () {
 </ul></li>
 </ul></li>
 </ol>
-<p>This page was last updated: 2020-11-16 20:53:28.</p>
+<p>This page was last updated: 2020-11-16 22:40:29.</p>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 

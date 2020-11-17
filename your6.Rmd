@@ -28,17 +28,17 @@ All of your work should be done in a fresh R project in a clean directory on you
 3. Cleaning the Data 
     - Note that it's only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.
     - If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn't do that except in dire circumstances.
-    - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names.
-    - The last subsection of Section 3 should be a **Codebook** which lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables. 
-        - Each variable should have its name (and its original name if you've changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical. 
-        - For categorical variables, list the levels in the codebook. If any of those levels are "don't know" or "did not respond" or "unknown" I would drop those cases in the cleaning process, treating those as missing values.
-        - Be sure to indicate which variable is your outcome by including **outcome** in the description of that variable in your codebook.
-4. Your Question
+    - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names. If you decide to change the names, that's OK, but then specify what their original names were in the codebook below.
+    - If any of the variables have responses like "don't know" or "did not respond" or "unknown" I would drop those cases in the cleaning process, treating those as missing values.
+4. My Research Question
     - Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.
-5. Your Variables
-    - This section should have three subsections
-    - Create a subsection called Codebook first. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don't make me guess.
-    - Then create a subsection called Numerical Data Description, and present the results of  **Hmisc::describe** or **mosaic::favstats** or something similar for all variables of interest (e.g. leave out the subject identifier)
+5. My Final Variables
+    - Subsection 5.1 should be called Codebook. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don't make me guess.
+        - The Codebook lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables. 
+        - Each variable should have its name (and its original name if you've changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical. 
+        - For categorical variables, list the levels in the codebook. 
+        - Be sure to indicate which variable is your outcome by including **outcome** in the description of that variable in your codebook.
+    - Subsection 5.2 should be called Numerical Data Description, and should present the results of  **Hmisc::describe** or **mosaic::favstats** or something similar for all variables of interest (e.g. leave out the subject identifier)
 6. Partitioning the Data
     - Show how you split the data into two samples (a model training sample containing 70-80% of the data, and a model test sample containing the remaining 20-30%.) Details on how to do this [are available here](your4.html).
     - Be sure to demonstrate that each subject in the original data wound up in either your training or your test sample.
