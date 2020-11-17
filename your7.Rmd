@@ -6,12 +6,13 @@ title: "Study 2 Demonstration Materials"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-Links are now available for R Markdown and HTML versions of Sample Study 2 demonstration materials as they become available.
+**Posted 2020-11-17**: Links are now available for all Study 2 demonstration materials.
 
-Remember that a general outline and set of instructions for the Study 2 report [is available here](your6.html). 
+Remember that a general outline and set of instructions for the Study 2 report [is available here](your6.html).
+
 ## The Study 2 Demonstration Project
 
-I have demonstrated many of the elements you would need to complete in Study 2, including:
+In the demo, I demonstrate many (but not all) of the elements you would need to complete in Study 2, including:
 
 - data ingest
 - cleaning the data, as well as

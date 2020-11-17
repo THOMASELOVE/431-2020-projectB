@@ -54,7 +54,7 @@ You can work alone, or with one other person on this project. If you work as a p
 - Every project group will be working with different data sets in Study 2, as a result.
 - Study 2 involves the prediction of a quantitative outcome using a key predictor and some additional predictors in two linear regression models, and then comparing those two models using tools we've already seen, plus some tools we will develop in classes 22-24, so that you'll have all relevant material covered before the Thanksgiving Break.
 - The Study 2: Your Data section of this website includes complete Study 2 instructions.
-    - Study 2 Demonstration materials that may help you build your report will appear before the Thanksgiving break. 
+    - This includes a [Study 2 Demonstration Project](your7.html) (posted 2020-11-17) that should help you build your report.
 
 # Grading
 
