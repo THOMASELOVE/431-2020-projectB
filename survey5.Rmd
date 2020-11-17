@@ -61,5 +61,8 @@ Those first three sections should then be followed by any four of the following 
     - Answer your research question, by clearly linking the analytic results to what you were asking at the start. 
     - If you can see a logical next step for the analysis of the question you asked, specify it. Also, if you specified a pre-existing belief about what would happen, reflect on that in light of the data.
 
+## And finally...
+
+Include the session information with **sessionInfo()** as a separate section at the end of your report.
 
 This page was last updated: `r Sys.time()`.

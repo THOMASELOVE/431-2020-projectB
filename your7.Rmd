@@ -6,18 +6,44 @@ title: "Study 2 Demonstration Materials"
 knitr::opts_chunk$set(comment = NA)
 ```
 
-Links will be provided below to R Markdown and HTML versions of Sample Study 2 demonstration materials as they become available.
+Links are now available for R Markdown and HTML versions of Sample Study 2 demonstration materials as they become available.
 
 Remember that a general outline and set of instructions for the Study 2 report [is available here](your6.html). 
+## The Study 2 Demonstration Project
 
-A demonstration of four key elements of Study 2 analyses will be linked here, specifically...
+I have demonstrated many of the elements you would need to complete in Study 2, including:
 
-- partitioning the data into training and test samples
-- considering transformations for an outcome
-- an in-sample (training sample) comparison of models
-- an out-of-sample (test sample) comparison of models
+- data ingest
+- cleaning the data, as well as
+- building a codebook for the final variables and describing them numerically, plus
+- partitioning the data
+- considering (and applying) a transformation
+- fitting and summarizing a big model and a small model
+- comparing the two models within the training sample
+- validating and comparing the two models within the holdout (test) sample
 
-These materials will appear before the Thanksgiving Break.
+for a simulated data set containing information on 999 subjects about high blood pressure control.
+
+## The Files
+
+- The R Markdown file [can be downloaded here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/431-projectB-study2-demo.Rmd).
+- The HTML result [can be viewed here](https://rpubs.com/TELOVE/projB-study2-demo), and [can be downloaded here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/431-projectB-study2-demo.html).
+
+The data file for the Study 2 Demonstration Project is described in the R Markdown and HTML files above and is found on [the 431-data website](https://github.com/THOMASELOVE/431-data). It is called:
+
+- **hbp_study.csv** (999 observations in 12 columns)
+
+The subjects are identified with a code called `subj_id` 
+ 
+## Caveats
+
+1. The demonstration project does not precisely follow the requirements from Study 2 for certain sections, because that is a big part of your job. 
+
+2. In the demonstration project, I don't make much of an effort to make attractive graphs.
+
+3. Outside of those caveats, these demonstrations are meant to be accurate and reflect the level of detail I'm looking for, although it is certainly possible to expand on these demonstrations in your work, if that seems helpful. I believe the demonstration project documents to be largely accurate, but many eyes will find some issues, eventually. 
+
+If people find corrections and would be good enough to post them to Piazza (under the corrections and projectB folders, please) I will attempt to reflect those edits in revisions. If I do something in the demonstration project that appears to be in conflict with the instructions for Study 2, then (a) please let me know, and (b) treat the Study 2 instructions as your guidepost in completing your work.
 
 This page was last updated: `r Sys.time()`.
 

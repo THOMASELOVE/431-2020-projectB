@@ -412,24 +412,27 @@ $(document).ready(function () {
 <li>The Big Model
 <ul>
 <li>Fit a linear regression model including all of your candidate predictors for your (possibly transformed) outcome within your training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.</li>
+<li>If you want to divide this work into subsections, that’s up to you.</li>
 </ul></li>
 <li>The Smaller Model
 <ul>
 <li>Fit a linear regression model using a subset of your predictors that is interesting, again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.</li>
 <li>Your subset must include at least the key predictor, and a perfectly reasonable strategy for this project is simply to compare the “naive” model with the key predictor alone to the full model with all predictors you have identified.</li>
 <li>If you prefer to use another subset of predictors from your big model as your smaller model, that’s fine, too. If you’d prefer to use an automated or semi-automated strategy for identifying your subset of predictors from the big model, that’s also fine.</li>
+<li>If you want to divide this work into subsections, that’s up to you.</li>
 </ul></li>
 <li>In-Sample Comparison
 <ul>
-<li>It would be helpful to present three subsections here, entitled <strong>Quality of Fit</strong>, <strong>Assessing Assumptions</strong> and <strong>Comparing the Models</strong></li>
+<li>Present three subsections here, entitled <strong>Quality of Fit</strong>, <strong>Assessing Assumptions</strong> and <strong>Comparing the Models</strong></li>
 <li>In <strong>Quality of Fit</strong>, use <strong>glance</strong> for each of the models you fit (Big and Smaller) to summarize the quality of fit (focusing on <span class="math inline">\(R^2\)</span>, adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC) within the training sample.</li>
 <li>In <strong>Assessing Assumptions</strong>, use <code>augment</code> to help you create and assess residual plots (specifically you should be looking at the assumptions of linearity, constant variance and Normality) for each of the two models.</li>
 <li>In <strong>Comparing the Models</strong>, comment on the relative strengths and weaknesses of the two models within your training sample. Which model do you prefer, based on this information?</li>
 </ul></li>
 <li>Model Validation
 <ul>
-<li>This, too, should have three subsections, entitled <strong>Visualizing the Predictions</strong>, <strong>Summarizing the Errors</strong> and <strong>Comparing the Models</strong>.</li>
-<li><strong>Visualizing the Predictions</strong> Apply each of your models to the test sample to predict the outcome and provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?</li>
+<li>This should have four subsections, entitled <strong>Calculating Prediction Errors</strong>, <strong>Visualizing the Predictions</strong>, <strong>Summarizing the Errors</strong> and <strong>Comparing the Models</strong>.</li>
+<li><strong>Calculating Prediction Errors</strong> Apply each of your models to the test sample to predict the outcome and do whatever back-transformation of the <code>augment</code> results is necessary.</li>
+<li><strong>Visualizing the Predictions</strong> Provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?</li>
 <li><strong>Summarizing the Errors</strong> Then summarize the following values, all on the scale of the original untransformed outcome, across the observations in your test sample, in an attractive table.
 <ul>
 <li>square root of the mean squared prediction error (RMSPE)</li>
@@ -458,8 +461,9 @@ $(document).ready(function () {
 <li>Briefly describe what you would have done differently in Study 2 had you known at the start of the project what you have learned by doing it.</li>
 </ul></li>
 </ul></li>
+<li>Include the session information with <strong>sessionInfo()</strong> as a separate section at the end of your report.</li>
 </ol>
-<p>This page was last updated: 2020-11-16 22:40:29.</p>
+<p>This page was last updated: 2020-11-17 00:46:23.</p>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 

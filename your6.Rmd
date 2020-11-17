@@ -49,18 +49,21 @@ All of your work should be done in a fresh R project in a clean directory on you
     - If your outcome includes non-positive values, you may have to add the same value to each observation of the outcome before using power transformations. (For instance, if some of your values of your raw outcome are 0, you might add 1 to each observation before considering a transformation.)
 8. The Big Model
     - Fit a linear regression model including all of your candidate predictors for your (possibly transformed) outcome within your training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
+    - If you want to divide this work into subsections, that's up to you.
 9. The Smaller Model
     - Fit a linear regression model using a subset of your predictors that is interesting, again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.
     - Your subset must include at least the key predictor, and a perfectly reasonable strategy for this project is simply to compare the "naive" model with the key predictor alone to the full model with all predictors you have identified.
     - If you prefer to use another subset of predictors from your big model as your smaller model, that's fine, too. If you'd prefer to use an automated or semi-automated strategy for identifying your subset of predictors from the big model, that's also fine.
+    - If you want to divide this work into subsections, that's up to you.
 10. In-Sample Comparison
-    - It would be helpful to present three subsections here, entitled **Quality of Fit**, **Assessing Assumptions** and **Comparing the Models**
+    - Present three subsections here, entitled **Quality of Fit**, **Assessing Assumptions** and **Comparing the Models**
     - In **Quality of Fit**, use **glance** for each of the models you fit (Big and Smaller) to summarize the quality of fit (focusing on $R^2$, adjusted $R^2$, AIC and BIC) within the training sample.
     - In **Assessing Assumptions**, use `augment` to help you create and assess residual plots (specifically you should be looking at the assumptions of linearity, constant variance and Normality) for each of the two models. 
     - In **Comparing the Models**, comment on the relative strengths and weaknesses of the two models within your training sample. Which model do you prefer, based on this information?
 11. Model Validation
-    - This, too, should have three subsections, entitled **Visualizing the Predictions**, **Summarizing the Errors** and **Comparing the Models**.
-    - **Visualizing the Predictions** Apply each of your models to the test sample to predict the outcome and provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?
+    - This should have four subsections, entitled **Calculating Prediction Errors**, **Visualizing the Predictions**, **Summarizing the Errors** and **Comparing the Models**.
+    - **Calculating Prediction Errors** Apply each of your models to the test sample to predict the outcome and do whatever back-transformation of the `augment` results is necessary.
+    - **Visualizing the Predictions** Provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?
     - **Summarizing the Errors** Then summarize the following values, all on the scale of the original untransformed outcome, across the observations in your test sample, in an attractive table.
         - square root of the mean squared prediction error (RMSPE)
         - mean absolute prediction error (MAPE)
@@ -76,5 +79,6 @@ All of your work should be done in a fresh R project in a clean directory on you
         - Discuss an interesting next step you would like to pursue to learn more about this sort of research question or to go further with these data.
     - **Reflection**
         - Briefly describe what you would have done differently in Study 2 had you known at the start of the project what you have learned by doing it.
+13. Include the session information with **sessionInfo()** as a separate section at the end of your report.
 
 This page was last updated: `r Sys.time()`.
