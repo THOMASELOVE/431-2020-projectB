@@ -113,5 +113,12 @@ That's up to you. Find variables of interest in the description files, and pull 
     - In many cases, you should have well over 8000, but depending on what you select, you may have a much smaller subset, and you should be able to explain to us why that is the case, if it is. 
     - For example, if you're studying something that is only measured in females, or in children, you'll have a smaller sample for that reason, and you need to make that clear to us in your report.
 
+## Video to help with cleaning NHANES data
+
+- On 2020-11-17, Dr. Love built a video called **video_nhanes_example.mp4** available on our shared Google Drive in the Project B folder.
+    - In the video, Dr. Love downloads data using `nhanesA` from three data sets in NHANES 2017-18, selects a few variables, merges the files, and then cleans up one of the variables to turn "Don't Know" and "Refused" responses to missing values.
+    - Dr. Love made a mistake at the very end of the video when he suggested you ask questions via Canvas. Of course, he meant via [Piazza](https://piazza.com/case/fall2020/pqhs431).
+- The [R Markdown file](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/video_nhanes.Rmd) Dr. Love displayed and ran in the video is also available.
+
 
 This page was last updated: `r Sys.time()`.
