@@ -38,7 +38,7 @@ The subjects are identified with a code called `subj_id`
  
 ## Caveats
 
-1. The demonstration project does not precisely follow the requirements from Study 2 for certain sections, because that is a big part of your job. 
+1. The demonstration project does not precisely follow the requirements from Study 2 for certain sections, because that is a big part of your job. In particular, I'll note that I augmented the instructions in the [Report Specifications](your6.html) for Sections 3 (Cleaning the Data) and 5 (Your Final Variables) after the demonstration project was created, so I placed a short note at the start of those sections to remind you to look at the detailed instructions
 
 2. In the demonstration project, I don't make much of an effort to make attractive graphs.
 

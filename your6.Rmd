@@ -26,19 +26,11 @@ All of your work should be done in a fresh R project in a clean directory on you
 2. Merging the Data
     - This is necessary if you're working with NHANES data, but it might not be if you aren't.
 3. Cleaning the Data 
-    - Note that it's only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.
-    - If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn't do that except in dire circumstances.
-    - If you are working with NHANES data, do all of your cleaning after the merge. I also suggest applying **clean_names** after merging, but I wouldn't otherwise change the variable names. If you decide to change the names, that's OK, but then specify what their original names were in the codebook below.
-    - If any of the variables have responses like "don't know" or "did not respond" or "unknown" I would drop those cases in the cleaning process, treating those as missing values.
+    - **NEW!** I've added detailed [instructions for Section 3. Cleaning your Data][Section 3: Cleaning Your Data], which you'll find below. Please review that material closely.
 4. My Research Question
     - Specify your research question, with whatever introduction and background you feel is required for Dr. Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.
 5. My Final Variables
-    - Subsection 5.1 should be called Codebook. In it, provide an attractive codebook specifying the names and descriptions of each of your 6-11 variables in your final data set. Specify incredibly clearly which is the outcome, and which is the key predictor. Don't make me guess.
-        - The Codebook lists all of the variables you will use in your analyses (plus the subject identifying code) and no other variables. 
-        - Each variable should have its name (and its original name if you've changed it from the initial download) and a description of the variable where you specify its type as quantitative, binary or multi-categorical. 
-        - For categorical variables, list the levels in the codebook. 
-        - Be sure to indicate which variable is your outcome by including **outcome** in the description of that variable in your codebook.
-    - Subsection 5.2 should be called Numerical Data Description, and should present the results of  **Hmisc::describe** or **mosaic::favstats** or something similar for all variables of interest (e.g. leave out the subject identifier)
+    - **NEW!** I've added detailed [instructions for Section 5. My Final Variables][Section 5: My Final Variables]. Please review that material closely, as it will help you include what I need to see in your report, and Section 5 is a piece we will be looking at carefully.
 6. Partitioning the Data
     - Show how you split the data into two samples (a model training sample containing 70-80% of the data, and a model test sample containing the remaining 20-30%.) Details on how to do this [are available here](your4.html).
     - Be sure to demonstrate that each subject in the original data wound up in either your training or your test sample.
@@ -80,5 +72,100 @@ All of your work should be done in a fresh R project in a clean directory on you
     - **Reflection**
         - Briefly describe what you would have done differently in Study 2 had you known at the start of the project what you have learned by doing it.
 13. Include the session information with **sessionInfo()** as a separate section at the end of your report.
+
+### Section 3: Cleaning Your Data {#sec3}
+
+Tips on cleaning your data:
+
+1. If you need to merge data (for instance in NHANES) I would clean the data after doing the merge.
+2. Note that it's only necessary to clean the variables you will actually use in your analyses below. Create an analytic data set containing only those variables.
+    - This should include a subject identification code (the SEQN in NHANES), your outcome, your key predictor and your other predictors. 
+    - If you are working with NHANES data, you will need to include **RIDSTATR** and **RIDAGEYR** from the **DEMO_J** file. 
+        - Include **RIDSTATR** just so that you can prove that all of its values are 2 in your sample.
+        - Include **RIDAGEYR** even if you're not using it in your models, so you can describe the ages of the people in your sample.
+2. If you create a categorical variable from a quantitative one, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable. In general, though, I wouldn't do that except in dire circumstances. Variables that use categories to describe what were originally quantitative variables aren't quantitative any more.
+3. Things I would treat as missing include responses like Refused, Don't Know, Did Not Respond, Unknown, No response and missing. 
+    - If you have a quantitative variable that includes a code like 5555 or 9999 for "don't know" or "missing", you will need to drop those cases, just as you would if you were working with a categorical variable.
+    - Be sure that R recognizes things that are missing as missing and filters them out when you filter for complete cases.
+4. Collapse levels sensibly for multi-categorical variables with more than 6 categories. If you want to use more than 6 categories for a categorical variable in your analyses, contact Dr. Love. 
+5. For NHANES folks, a few specific things:
+    - **Gender vs. Sex** I would treat the `RIAGENDR` variable as describing biological sex and would rename it as I created a factor.
+    - **Race/Ethnicity** If you want to use race/ethnicity I would prefer the use of `RIDRETH3` over `RIDRETH1`, and I would recommend using all six categories, assuming you have at least 100 subjects at each level after whatever other pruning you do. If you want to collapse, then lumping codes 1 and 2 into "Hispanic/Latinx" is acceptable. Remember that race/ethnicity as a covariate is an attempt to understand the impact of structural racism, at least as much as it is anything else, so interpretation requires special care.
+    - **Age** Do not use a categorical version of age. Use the quantitative version, called `RIDAGEYR`, provided in the `DEMO_J` data. When you describe your subjects, you should specify the range (minimum and maximum) ages of those subjects, so you will need to capture `RIDAGEYR` in your final analytic data set even if you're not including it in your regression models.
+    - **Income and Measurement Caps** The family income ratio `INDFMPIR` is appealing and quantitative, but it has a pronounced ceiling effect. It is the ratio of income to the poverty level, but is capped at 5. How should you think about that? (Note that age in adults is also capped, at 80.)
+    - **Categorical Income?** As a categorical alternative, the income data in `INDHHIN2` in NHANES can be tricky to use, since there are so many categories and some of them overlap. Collapse `INDHHIN2` to the following four categories, which are easy to describe, and have reasonable numbers of subjects in each category. Note that this approach drops the 718 subjects with codes 12, 77 or 99, in addition to the 491 with missing data.
+        - Lowest: Below 20,000 (includes original codes 1, 2, 3, 4 and 13: includes 1589 subjects in 2017-18 data)
+        - Low: between 20,000 and 44,999 (includes original codes 5, 6, and 7: includes 2382 subjects in 2017-18 data)
+        - High: between 45,000 and 74,999 (includes original codes 8, 9 and 10: includes 1621 subjects in 2017-18 data)
+        - Highest: 75,000 and above (includes original codes 14 and 15: includes 2453 subjects in 2017-18 data)
+    - **Education Categories** If you're working with adults (ages 20 and over), the `DMDEDUC2` variable in the `DEMO_J` file is the set of categories to use. I would probably collapse codes 1 and 2 together to create a four-category variable with "Less than HS", "HS Grad", "Some College", "College Grad".
+5. Be sure to treat all multi-categorical variables as **factors** in R, and don't treat numeric codes as meaningful numeric variables.
+6.  Make sure that all of your quantitative variables have sensible minimum and maximum values as you're cleaning.
+7. Some binary variables are coded 1 and 2. Fix that in your work, ideally by using the real names and treating the variable as a factor, or by converting the 1-2 to a proper 1-0 indicator variable.
+    - Use the formula **NEWVAR = 2 - OLDVAR** to turn OLDVAR: 1 = Yes, 2 = No into NEWVAR: 1 = Yes, 0 = No.
+    - If you have OLDVAR: 1 = No, 2 = Yes, create a NEWVAR with 1 = Yes, 0 = No using **NEWVAR = OLDVAR - 1**.
+8. If you would prefer to impute missing values for variables that are neither your outcome or your key predictor, you are permitted to do so, but I don't want to encourage this. A complete cases analysis is completely acceptable for this project, so long as you wind up with between 250 and 10,000 observations with complete data. You are not permitted to impute your outcome or your key predictor.
+9. You are welcome to apply **clean_names** at the start or end of your cleaning, if you like, but I wouldn't otherwise change the variable names, at least for NHANES. If you do decide to change the names, that's OK, but you will then need to specify the original names as well in the codebook in section 5.2.
+10. Please don't include sanity checks or a listing of your final tibble in section 3 of your report.
+
+### Section 5: My Final Variables
+
+Your section 5 should include two subsections.
+
+1. Codebook
+2. Numerical Data Description
+
+#### Details on Subsection 5.1 Codebook
+
+In the codebook, you will provide an attractive codebook specifying the names and descriptions of each of the variables in your final data set. 
+
+- The first thing that should appear in this section is a description of the subjects of your study. 
+    - As an example of what I'm looking for, suppose that you are working with NHANES data and have identified 3500 adults between the ages of 21 and 79 who have complete data on the variables in your final data set. In that case, the description I would want to see would be: "3500 adults ages 21-79 participating in NHANES 2017-18 with complete data on the variables listed in the table below."
+- Present your codebook in a table, with either three or four columns. 
+    - Place the variable name you will use in your analyses in the left-most column. The Codebook lists all of the variables you will use in your analyses (plus the subject identifying code). If you're working with NHANES data, you should include both SEQN (subject code) and RIDSTATR (interview / examination status) in this list.
+    - For all variables that will be used in regression models, place the type of variable in the next column.
+    - The type should be Quant (for quantitative variables), Binary (for two-category variables), or X-cat for multi-category variables) where X should either be 3, 4, 5 or 6, to indicate the number of levels in the variable.
+    - You needn't specify a type for SEQN (or whatever your subject identifying code is) or for RIDSTATR, and if you're not using RIDAGEYR in your models, you can just list it as type = Quant and describe it with Age (used only to describe the subjects).
+    - Place a description of the variable (which should be brief but effective) in the next column. 
+        - Make the word **Outcome** in bold the first word of the description for your outcome.
+        - Make the words **Key Predictor** in bold the first two words of the description for your key predictor.
+        - If you created a new variable out of raw variables you downloaded, be sure that is clear in your description. 
+        - For all categorical variables, list the possible levels of the variable in the description.
+        - If you collapsed levels from the original setup back in Section 3, here you need to only list and describe the levels you actually wound up with.
+        - If you're working with NHANES data, 
+            - For SEQN, just write "Subject identifying code" for the description
+            - For RIDSTATR, just write "Code 2 = Both interviewed and examined"
+    - If you've changed a variable name (other than the obvious changes made by **clean_names**) from what you imported initially from your data source, add a final column where you specify the original variable name. The original name alone is sufficient here. 
+        - For those working with NHANES data, we will already be able to tell which data set in NHANES you used to obtain this variable from your initial pull of the data with the nhanesA package, so don't specify the data set name again here.
+
+Make sure your Codebook looks nice and is easy to read in your HTML result. We will definitely look closely at all parts of Section 5 of your Study 2 report.
+
+#### Details on Subsection 5.2 Numerical Data Description
+
+There are three parts to this subsection.
+
+1. Begin this section with a call to `str` for your tibble, for example `str(nh_clean)`. 
+    - This will tell us (and you) if your data frame is a tibble, how many rows and columns it has, and what type of variable R thinks each variable is. Remember that all multi-categorical variables should be listed as factors.
+2. Next, present the results of `Hmisc::describe` for your tibble. You are welcome to include or leave out the subject identifier, whatever you prefer.
+3. Finally, create a bullet list to demonstrate that you've checked the things listed below.
+
+After you show the `Hmisc::describe` results, you will use those results to do the following things, and then write up a quick bullet list to say that you've done them.
+
+1. Make sure that none of your variables show any missing data.
+    - If you did this as a result of dropping all subjects with missing data in the cleaning work, simply mention here in your bullet list that you assumed MCAR and dropped all subjects with missing data to obtain your final analytic tibble.
+    - If you did this by simply imputing one or more of your variables back in section 3, remind us of that here in the bullet list.
+2. Make sure all of your quantitative variables have a sensible minimum and maximum value.
+    - Especially if you're working with NHANES data, be sure that codes like 5555 or 9999 are no longer present.
+    - In your bullet list, just specify that you've checked the range for all quantitative variables.
+3. For each of your categorical variables, be sure that:
+    - we only see sensible, interpretable categories included, (so don't know/refused/missing aren't categories anymore) and that
+    - each variable has at least 2 levels and no more than 6 levels, and each level contains a reasonable number of subjects, and that
+    - all multi-categorical variables are included as factors, rather than numeric variables, in R
+    - In your bullet list, you can simply state that you have checked all of your categorical variables for problems, and that all levels have at least XXX subjects, where for XXX you substitute in the minimum number of subjects in a level across all of your categorical variables.
+4. If you're working with NHANES data, you should also:
+    - show us (and assert in your bullet list) that all subjects have RIDSTATR = 2, and thus were included in both the questionnaire and examination data.
+    - once again specify the age range for your subjects, based on the `RIDAGEYR` variable, even if you're not using `RIDAGEYR` in your regression models.
+
+Make sure your bullet list looks nice and is easy to read in your HTML result. We will definitely look closely at all parts of Section 5 of your Study 2 report.
 
 This page was last updated: `r Sys.time()`.
