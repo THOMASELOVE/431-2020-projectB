@@ -30,26 +30,86 @@ Your Study 2 Report is to be submitted to Canvas by 2020-12-10 at Noon.
 - Be sure that the names of your R Markdown and HTML files clearly identify whose project is being submitted, and an indication that these files refer to study 2.
 - Again, if you are working with a partner, one of you should submit both the Study 1 and Study 2 reports to Canvas, and the other person should submit a one-page note to Canvas (word or PDF is best) containing your name, and stating something like "I worked on Project B with [your partner's name] and they will submit Project B for our group."
 
-# Oral Presentation of Results
+# NEW! Oral Presentation of Results
 
-On 2020-12-01, Dr. Love will pose a series of questions about your two Studies, and you will respond to those questions through a short oral presentation.
+To complete the oral presentation requirement, some project teams will produce a video (of no more than 8 minutes in length) describing their work and others will have a Zoom meeting (within a 30-minute window, but the actual meeting will be approximately 20 minutes) with Dr. Love. Here are instructions for that work. Read the directions that apply to your situation.
 
-1. A substantial majority of the project groups will prepare a pre-recorded video presentation to respond to Dr. Love's questions, and that, too, will be due on 2020-12-10 at noon.
+## Students producing a video recording
 
-2. A few (12-15) of the project groups will instead meet through Zoom with Dr. Love to have a 15-20 minute conversation about their Project B on either 2020-12-09, 2020-12-10, or 2020-12-11.
-    - Students in these groups will be identified from among those students who will be in the Eastern time zone in North America on the dates in question, and whose project or project members fit into at least one of the following categories:
-        - undergraduate students,
-        - candidates for the MS in Health Care Analytics within the PQHS department, 
-        - candidates for the PhD within the PQHS department, 
-        - struggled with Project A, 
-        - are using, in Study 2, a data set in which Dr. Love has a special interest
-    - Not all students in those situations will meet with Dr. Love. 
-    - Details on who will meet will be provided on 2020-12-01.
+Whether working as a team of two or an individual, if you are producing a video, it is to be no longer than 8 minutes, and should be submitted via Canvas along with your Study 1 and Study 2 reports no later than Noon on 2020-12-10. 
 
-Further details on the presentations, including the questions you will need to address, will be communicated to you on 2020-12-01.
+- A sound strategy is to create a Zoom recording of yourself and your work. Recordings that used this approach were among the most successful in Project A.
+- Be certain that all of the materials you are trying to show to Dr. Love are clearly visible (please increase the size of your report in your browser to ensure this happens) and that your voice can be clearly heard in the video. 
+- You are welcome to show me results in the context of a Powerpoint-style presentation, if you prefer to develop one, or to show me results straight from your Markdown-created HTML files in your portfolio. Whatever works for you - so long as I can see what you are talking about as you are talking, we'll be fine.
+- Be certain to watch the video before submitting it to ensure that you can be heard, and that your materials can be seen.
+- If you are working with a partner, each of you should introduce yourself at the start of your part of the video, and you should divide the work roughly in half, with each of you speaking for about half of the total time.
+
+Here are the questions you need to respond to in your video of no more than 8 minutes in length.
+
+1. **Minutes 1 and 2** From Study 1, select the most interesting / intriguing result out of the four main analyses you did, and present that to Dr. Love, in a maximum of 2 minutes. In those 2 minutes, you should be showing me the highlights of that Analysis, specifically:
+    - Which Analysis (A, B, C, D, E or F) are you describing?
+    - What research question are you investigating, and what variables from the class survey did you use?
+    - What conclusion did you draw about that question?
+    - What statistical method led you to that conclusion?
+
+2. **Minutes 3-6** From Study 2, you will be telling me about the most important finding of your study in a maximum of 4 minutes. In these 4 minutes, you will tell me:
+    - What your research question was and why it was interesting to you (restrain yourself to take no more than 30 seconds on this part)
+    - What your stronger model (of the two you fit) has to say about the answer to your research question
+        - This should include a description of the predictors that wound up in your (final) model and the direction of each of their effects on your outcome. Show me the model as you're telling me about this.
+        - This should also include a sense of how well the model predicted overall ($R^2$ is one good choice)
+        - This should also include how well the residual plots for your final model fit regression assumptions. Show me the plots as you're telling me about this.
+    - Your conclusions about rational next steps to learn more from these data, or what specific new data you now wish you'd had when you started the study.
+
+3. **Minutes 7 and 8** Finally, in at most two minutes, provide me with an insightful answer to the following questions: (1) What have you learned now as a result of Project B that you wish you'd known back when you started thinking about Project B back at the start of November? (2) What would you tell yourself if you could go back in time?
+
+## Students meeting with Dr. Love via Zoom
+
+Once the schedule of Zoom meetings is available, please do everything you can to ensure that you will be on the line on time and for the duration of the scheduled half-hour window with Dr. Love. Please join the meeting as soon as your half-hour window begins. The actual meeting will take about 20 minutes, but it is helpful for us to have a little extra time available (hence the half-hour sessions) to deal with any technical issues. If you have an emergency on the day of your presentation, email Dr. Love as soon as possible.
+
+You will give your final presentation in a 20-minute meeting with Dr. Love on December 9, 10 or 11 as scheduled. Regardless of when your Zoom meeting is scheduled, you should submit your Study 1 and Study 2 reports to Canvas and your self-evaluation Google Form by the noon deadline on December 10. 
+
+Your Zoom meeting will involve materials from each of your studies, discussed in a fairly regimented way, described below. If you are working with a partner, Dr. Love will randomly determine at the meeting who will speak and when, so you need to each be prepared to give the entire presentation. Dr. Love will keep track of time, and move you along as necessary, so you won't have to worry about that.
+
+- You will need to share a screen to show me the key results as you describe them for each of the analyses in Study 1 and in Study 2 that you wind up discussing. It is best if one of you is prepared to share their screen for both presentations, if you're working with a partner, and I encourage you to practice this in advance.
+- You are welcome to show me results in the context of a Powerpoint-style presentation, if you prefer to develop one, or to show me results straight from your Markdown-created HTML files in your portfolio. Whatever works for you - so long as I can see what you are talking about as you are talking, we'll be fine. Make sure you know how to increase the size of the text in your HTML file while presenting it.
+- The second screen on the computer where I will be viewing the Zoom meeting will be busy, so I will NOT be able to pull up your report or other materials while we are talking. You will have to be able to do that.
+
+### Study 1 presentation (6-8 minutes)
+
+In Study 1, you will first select your most interesting / intriguing result out of your four main analyses and present that, in about 2 minutes. In those 2 minutes, you should be showing me the highlights of that Analysis, specifically:
+
+- Which Analysis (A, B, C, D, E or F) are we describing?
+- What research question are you investigating, and what variables from the class survey did you use?
+- What conclusion did you draw about that question?
+- What statistical method led you to that conclusion?
+
+I will then ask you to tell me which of the other analyses (meaning A, B, C, D, E or F) you did. I will then ask you to present the results of one of the other analyses you did, in a similar way. You will need to come prepared to present this information for any of the four Study 1 analyses at a moment's notice, as you will not know in advance which of your other analyses you did that I will ask for.
+
+### Study 2 presentation (10-12 minutes)
+
+In Study 2, you will start with telling me about the most important finding of your little study in four minutes. In these 4 minutes, you will tell me:
+
+- What your research question was and why it was interesting to you (combined this should take no more than 30 seconds)
+- What your better model has to say about the answer to your research question
+    - This should include a description of the predictors that wound up in your (final) model and the direction of each of their effects on your outcome. Show me the model as you're telling me about this.
+    - This should also include a sense of how well the model predicted overall ($R^2$ is one good choice)
+This should also include how well the residual plots for your final model fit regression assumptions. Show me the plots as you're telling me about this.
+    - Your conclusions about rational next steps to learn more from these data, or what specific new data you now wish you'd had when you started the study.
+    
+For most of the remaining time, I will ask you about your study, and try to help you think through any problems you had in obtaining or interpreting analyses. You should come prepared to share any of the steps in your analysis at a moment's notice, as we may want to look at any part of your work.
+
+### Final Questions (2-4 minutes)
+
+Depending on time, I may ask you any of several questions at the end of our meeting. Some possibilities you should be prepared for include the following (some of which also appear in the self-evaluation)
+
+- What percentage of your time in Project B did you spend obtaining, cleaning, merging and tidying data, as opposed to actually performing analyses on tidy data?
+- Tell me something useful that you learned from doing Project B.
+- Tell me what the hardest part of doing Project B was.
+- What did you learn from Project A that was helpful in doing Project B?
+- What do you know now that you wish you'd known back when you started Project B back in November? What would you tell yourself if you could go back in time?
 
 # Self-Evaluation for Project B
 
-The Self-Evaluation for Project B Form will appear at http://bit.ly/431-projectB-self-evaluation by 2020-12-01. It will be due at noon on 2020-12-10.
+The Self-Evaluation for Project B Form is now available at http://bit.ly/431-projectB-self-evaluation and should take about 15 minutes to complete. If you are working in a team, each of you need to complete the form as an individual. The Form is also due at noon on 2020-12-10.
 
 This page was last updated: `r Sys.time()`.
