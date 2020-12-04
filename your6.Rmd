@@ -88,6 +88,7 @@ Tips on cleaning your data:
     - If you have a quantitative variable that includes a code like 5555 or 9999 for "don't know" or "missing", you will need to drop those cases, just as you would if you were working with a categorical variable.
     - Be sure that R recognizes things that are missing as missing and filters them out when you filter for complete cases.
 4. Collapse levels sensibly for multi-categorical variables with more than 6 categories. If you want to use more than 6 categories for a categorical variable in your analyses, contact Dr. Love. 
+    - If you have a categorical variable with codes like 77, 88 or 99, in addition to treating those as missing, you want to drop those levels from the factors you create. I recommend you run **droplevels()** on your tibble to remove all factor levels with zero subjects. That can help down the line.
 5. For NHANES folks, a few specific things:
     - **Gender vs. Sex** I would treat the `RIAGENDR` variable as describing biological sex and would rename it as I created a factor.
     - **Race/Ethnicity** If you want to use race/ethnicity I would prefer the use of `RIDRETH3` over `RIDRETH1`, and I would recommend using all six categories, assuming you have at least 100 subjects at each level after whatever other pruning you do. If you want to collapse, then lumping codes 1 and 2 into "Hispanic/Latinx" is acceptable. Remember that race/ethnicity as a covariate is an attempt to understand the impact of structural racism, at least as much as it is anything else, so interpretation requires special care.
@@ -146,6 +147,9 @@ There are three parts to this subsection.
 
 1. Begin this section with a call to `str` for your tibble, for example `str(nh_clean)`. 
     - This will tell us (and you) if your data frame is a tibble, how many rows and columns it has, and what type of variable R thinks each variable is. Remember that all multi-categorical variables should be listed as factors.
+    - If you have labelled class variables in your tibble according to `str` (as many of you using NHANES will, for example), I would zap those labels by applying `haven::zap_label()` to your tibble earlier in the cleaning. This changes variables from "S3:labelled" class to a more useful class. 
+        - One place where this can solve a problem is if you run augment on a model, or if you run plot on a model to obtain residual plots and get an error: $ operator is invalid for atomic vectors.
+        - That should be resolved if you zap the labels. 
 2. Next, present the results of `Hmisc::describe` for your tibble. You are welcome to include or leave out the subject identifier, whatever you prefer.
 3. Finally, create a bullet list to demonstrate that you've checked the things listed below.
 

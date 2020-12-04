@@ -21,6 +21,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -31,7 +33,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 
 
@@ -473,7 +475,10 @@ $(document).ready(function () {
 <li>If you have a quantitative variable that includes a code like 5555 or 9999 for “don’t know” or “missing”, you will need to drop those cases, just as you would if you were working with a categorical variable.</li>
 <li>Be sure that R recognizes things that are missing as missing and filters them out when you filter for complete cases.</li>
 </ul></li>
-<li>Collapse levels sensibly for multi-categorical variables with more than 6 categories. If you want to use more than 6 categories for a categorical variable in your analyses, contact Dr. Love.</li>
+<li>Collapse levels sensibly for multi-categorical variables with more than 6 categories. If you want to use more than 6 categories for a categorical variable in your analyses, contact Dr. Love.
+<ul>
+<li>If you have a categorical variable with codes like 77, 88 or 99, in addition to treating those as missing, you want to drop those levels from the factors you create. I recommend you run <strong>droplevels()</strong> on your tibble to remove all factor levels with zero subjects. That can help down the line.</li>
+</ul></li>
 <li>For NHANES folks, a few specific things:
 <ul>
 <li><strong>Gender vs. Sex</strong> I would treat the <code>RIAGENDR</code> variable as describing biological sex and would rename it as I created a factor.</li>
@@ -550,6 +555,11 @@ $(document).ready(function () {
 <li>Begin this section with a call to <code>str</code> for your tibble, for example <code>str(nh_clean)</code>.
 <ul>
 <li>This will tell us (and you) if your data frame is a tibble, how many rows and columns it has, and what type of variable R thinks each variable is. Remember that all multi-categorical variables should be listed as factors.</li>
+<li>If you have labelled class variables in your tibble according to <code>str</code> (as many of you using NHANES will, for example), I would zap those labels by applying <code>haven::zap_label()</code> to your tibble earlier in the cleaning. This changes variables from “S3:labelled” class to a more useful class.
+<ul>
+<li>One place where this can solve a problem is if you run augment on a model, or if you run plot on a model to obtain residual plots and get an error: $ operator is invalid for atomic vectors.</li>
+<li>That should be resolved if you zap the labels.</li>
+</ul></li>
 </ul></li>
 <li>Next, present the results of <code>Hmisc::describe</code> for your tibble. You are welcome to include or leave out the subject identifier, whatever you prefer.</li>
 <li>Finally, create a bullet list to demonstrate that you’ve checked the things listed below.</li>
@@ -580,7 +590,7 @@ $(document).ready(function () {
 </ul></li>
 </ol>
 <p>Make sure your bullet list looks nice and is easy to read in your HTML result. We will definitely look closely at all parts of Section 5 of your Study 2 report.</p>
-<p>This page was last updated: 2020-11-30 11:20:46.</p>
+<p>This page was last updated: 2020-12-04 08:34:10.</p>
 </div>
 </div>
 </div>
@@ -596,7 +606,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

@@ -21,6 +21,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -31,7 +33,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 
 
@@ -473,7 +475,7 @@ $(document).ready(function () {
 <div id="self-evaluation-for-project-b" class="section level1">
 <h1>Self-Evaluation for Project B</h1>
 <p>The Self-Evaluation for Project B Form is now available at <a href="http://bit.ly/431-projectB-self-evaluation" class="uri">http://bit.ly/431-projectB-self-evaluation</a> and should take about 15 minutes to complete. If you are working in a team, each of you need to complete the form as an individual. The Form is also due at noon on 2020-12-10.</p>
-<p>This page was last updated: 2020-11-30 11:20:29.</p>
+<p>This page was last updated: 2020-12-04 08:33:56.</p>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
@@ -487,7 +489,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
