@@ -55,7 +55,7 @@ For example, suppose we want to load the Blood Pressure data from the [2017-18 E
 
 We would use the following code, which will take a few minutes to run.
 
-```{r, eval = FALSE, message = FALSE}
+```{r, eval = FALSE, message = FALSE, warning = FALSE}
 library(nhanesA)
 library(tidyverse)
 
@@ -68,7 +68,7 @@ Once you've downloaded the file once, you should save it as an R data frame, and
 
 So your final presentation in Project B should instead look like this, which will run much more quickly.
 
-```{r, message = FALSE}
+```{r, message = FALSE, warning = FALSE}
 library(nhanesA)
 library(tidyverse)
 

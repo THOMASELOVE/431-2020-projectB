@@ -507,27 +507,26 @@ $(document).ready(function () {
 <p>Once you’ve downloaded the file once, you should save it as an R data frame, and then comment out the initial code you used to pull down the data in R. Then, when you rerun, it’ll be all set. Remember to create a data subfolder in your R Project directory for Study 2 first before you run this code.</p>
 <p>So your final presentation in Project B should instead look like this, which will run much more quickly.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(nhanesA)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>Warning: package &#39;tibble&#39; was built under R version 4.0.3</code></pre>
-<pre><code>Warning: package &#39;readr&#39; was built under R version 4.0.3</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># pull in data from BPX_J from NHANES and save it</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># bp_raw &lt;- nhanes(&#39;BPX_J&#39;) %&gt;% tibble()</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># saveRDS(bp_raw, &quot;data/BPX_J.Rds&quot;)</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Now that data are saved, I can just read in the tibble</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a></span>
-<span id="cb5-9"><a href="#cb5-9"></a>bp_raw &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/BPX_J.Rds&quot;</span>)</span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># pull in data from BPX_J from NHANES and save it</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># bp_raw &lt;- nhanes(&#39;BPX_J&#39;) %&gt;% tibble()</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># saveRDS(bp_raw, &quot;data/BPX_J.Rds&quot;)</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># Now that data are saved, I can just read in the tibble</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>bp_raw &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/BPX_J.Rds&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="merging-nhanes-files" class="section level2">
 <h2>Merging NHANES files</h2>
 <p>You will need to include data from multiple tibbles (data sets) pulled down in your project. I suggest you first select only those variables you intend to use in your analytic data file from each individual tibble you have created. This should always include the SEQN variable in every tibble, since that is what you will use to match up responses across those tibbles.</p>
 <p>To merge a demographics tibble called <strong>DEMO</strong> with a <strong>BPX</strong> tibble to create a tibble called <strong>NEW</strong> that contains the variables from both <strong>DEMO</strong> and <strong>BPX</strong> for all of the subjects contained in <strong>DEMO</strong>, I’d use a <strong>left_join</strong>, as follows.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>NEW &lt;-<span class="st"> </span><span class="kw">left_join</span>(DEMO, BPX, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>NEW &lt;-<span class="st"> </span><span class="kw">left_join</span>(DEMO, BPX, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
 <p>I’d then use another <strong>left_join</strong> to merge this NEW result with another tibble (say, the <strong>HDL_J</strong> tibble) and so on.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>NEW2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(NEW, HDL_J, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>NEW2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(NEW, HDL_J, <span class="dt">by =</span> <span class="st">&quot;SEQN&quot;</span>)</span></code></pre></div>
 <p>Then, when I was done merging and cleaning the data I would be sure to save that result as a new Rds file, just in case I needed it again.</p>
 </div>
 <div id="which-variables-subjects-should-i-use" class="section level2">
@@ -555,7 +554,7 @@ $(document).ready(function () {
 </ul></li>
 <li>The <a href="https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/video_nhanes.Rmd">R Markdown file</a> Dr. Love displayed and ran in the video is also available.</li>
 </ul>
-<p>This page was last updated: 2020-12-04 08:34:06.</p>
+<p>This page was last updated: 2020-12-06 13:42:31.</p>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
